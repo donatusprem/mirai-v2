@@ -236,7 +236,7 @@ export default function CartPanel() {
                                 </div>
                                 <button
                                     onClick={() => setShowQuoteForm(true)}
-                                    className="w-full py-4 bg-olive text-white font-bold uppercase tracking-wide rounded-lg hover:bg-olive/90 transition-colors"
+                                    className="w-full py-4 bg-black/80 backdrop-blur-md border border-white/20 text-white font-bold uppercase tracking-wide rounded-2xl shadow-lg hover:bg-black hover:scale-[1.02] transition-all duration-300"
                                 >
                                     Request Quote
                                 </button>

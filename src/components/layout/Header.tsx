@@ -3,11 +3,9 @@
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 import { ShoppingBag } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-
-import { usePathname } from "next/navigation";
 
 export default function Header() {
     const pathname = usePathname();
@@ -17,19 +15,25 @@ export default function Header() {
     const { openCart, totalItems } = useCart();
 
     // Hide Header on Admin pages
-    if (pathname.startsWith("/admin")) return null;
+    if (pathname?.startsWith("/admin")) return null;
 
-    // Transform background opacity based on scroll
+    // Liquid Glass Header Effect
     const headerBackground = useTransform(
         scrollY,
         [0, 50],
-        ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.9)"]
+        ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.7)"]
+    );
+
+    const headerBackdropBlur = useTransform(
+        scrollY,
+        [0, 50],
+        ["blur(0px)", "blur(16px)"]
     );
 
     const headerBorder = useTransform(
         scrollY,
         [0, 50],
-        ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.1)"]
+        ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.3)"]
     );
 
     useEffect(() => {
@@ -51,67 +55,74 @@ export default function Header() {
         { name: "HOME", href: "/" },
         { name: "COLLECTIONS", href: "/collections" },
         { name: "GALLERY", href: "/gallery" },
+        { name: "CONTACT US", href: "/contact" },
     ];
 
     return (
         <>
             <motion.header
-                style={{ backgroundColor: headerBackground, borderBottomColor: headerBorder }}
-                className="fixed top-0 left-0 right-0 z-40 border-b backdrop-blur-md transition-all duration-300"
+                style={{
+                    backgroundColor: headerBackground,
+                    borderBottomColor: headerBorder,
+                    backdropFilter: headerBackdropBlur
+                }}
+                className="fixed top-0 left-0 right-0 z-50 border-b border-transparent transition-all duration-300"
             >
-                <div className="container mx-auto flex h-20 items-center px-6 lg:px-12">
-                    {/* Logo - Left */}
-                    <Link href="/" className="relative z-50">
-                        <span className="text-2xl font-bold uppercase tracking-[0.2em] text-black">Mirai</span>
+                <div className="container mx-auto flex h-24 items-center justify-between px-6 lg:px-12">
+                    {/* Logo */}
+                    <Link href="/" className="relative z-50 group">
+                        <span className="text-2xl font-black uppercase tracking-[0.2em] text-neutral-900 group-hover:text-neutral-600 transition-colors">Mirai</span>
                     </Link>
 
-                    {/* Desktop Navigation - Center */}
-                    <nav className="hidden md:flex items-center justify-center gap-8 flex-1">
+                    {/* Desktop Navigation - Centered to match collections page style */}
+                    {/* Desktop Navigation */}
+                    <nav className="hidden md:flex items-center gap-12 absolute left-1/2 -translate-x-1/2">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                data-cursor="hover"
-                                className="text-xs font-medium uppercase tracking-widest text-text-main hover:text-black transition-colors"
+                                className="text-xs font-bold uppercase tracking-widest text-neutral-500 hover:text-black transition-colors relative group"
                             >
                                 {link.name}
+                                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-black transition-all duration-300 group-hover:w-full" />
                             </Link>
                         ))}
                     </nav>
 
-                    {/* Cart Icon - Right */}
-                    <button
-                        onClick={openCart}
-                        className="relative p-2 hover:bg-neutral-100 rounded-full transition-colors"
-                        aria-label="Open cart"
-                    >
-                        <ShoppingBag size={22} />
-                        {totalItems > 0 && (
-                            <span className="absolute -top-1 -right-1 bg-olive text-white text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold">
-                                {totalItems > 9 ? "9+" : totalItems}
-                            </span>
-                        )}
-                    </button>
+                    {/* Right Side: Cart & Mobile Menu */}
+                    <div className="flex items-center gap-6">
+                        {/* Cart Button */}
+                        <button
+                            onClick={openCart}
+                            className="relative group p-2 hover:bg-neutral-100 rounded-full transition-colors"
+                        >
+                            <ShoppingBag className="w-5 h-5 text-neutral-900" />
+                            {totalItems > 0 && (
+                                <span className="absolute -top-1 -right-1 bg-black text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">
+                                    {totalItems}
+                                </span>
+                            )}
+                        </button>
 
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="md:hidden group relative z-50 h-4 w-8 flex flex-col justify-between focus:outline-none ml-4"
-                        aria-label="Toggle menu"
-                    >
-                        <motion.span
-                            animate={mobileMenuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
-                            className="h-[2px] w-full bg-black block origin-center transition-all"
-                        />
-                        <motion.span
-                            animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                            className="h-[2px] w-full bg-black block transition-all"
-                        />
-                        <motion.span
-                            animate={mobileMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-                            className="h-[2px] w-full bg-black block origin-center transition-all"
-                        />
-                    </button>
+                        {/* Mobile Menu Button */}
+                        <button
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="md:hidden group relative z-50 h-4 w-8 flex flex-col justify-between focus:outline-none"
+                        >
+                            <motion.span
+                                animate={mobileMenuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+                                className="h-[2px] w-full bg-black block origin-center transition-all duration-300"
+                            />
+                            <motion.span
+                                animate={mobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+                                className="h-[2px] w-full bg-black block transition-all duration-300"
+                            />
+                            <motion.span
+                                animate={mobileMenuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+                                className="h-[2px] w-full bg-black block origin-center transition-all duration-300"
+                            />
+                        </button>
+                    </div>
                 </div>
             </motion.header>
 
@@ -119,23 +130,23 @@ export default function Header() {
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: "-100%" }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: "-100%" }}
-                        transition={{ duration: 0.5, ease: [0.76, 0, 0.24, 1] }}
-                        className="fixed inset-0 z-30 bg-white flex flex-col items-center justify-center space-y-8 md:hidden"
+                        initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+                        animate={{ opacity: 1, backdropFilter: "blur(20px)" }}
+                        exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+                        transition={{ duration: 0.4 }}
+                        className="fixed inset-0 z-40 bg-white/80 flex flex-col items-center justify-center space-y-8 md:hidden"
                     >
                         {navLinks.map((link, idx) => (
                             <motion.div
                                 key={link.name}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2 + idx * 0.1 }}
+                                transition={{ delay: 0.1 + idx * 0.1 }}
                             >
                                 <Link
                                     href={link.href}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="text-3xl font-bold uppercase tracking-widest hover:text-olive transition-colors"
+                                    className="text-3xl font-black uppercase tracking-widest text-neutral-900 hover:text-neutral-500 transition-colors"
                                 >
                                     {link.name}
                                 </Link>

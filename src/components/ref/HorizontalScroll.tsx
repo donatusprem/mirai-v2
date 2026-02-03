@@ -4,13 +4,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
 
-// Mock data based on the categories seen in video (Phone Booths, Sofas, etc.)
-const items = [
-    { id: 1, title: "Phone Booths", image: "/uploads/ref/9eaf23_8cec7df0062a42528ee116ee4c03cbd1~mv2.avif", link: "/collections?category=Phone Booths" },
-    { id: 2, title: "Modular Sofas", image: "/uploads/ref/11062b_ef91de418bee499b82b3a02752c23438~mv2_d_2301_1536_s_2.avif", link: "/collections?category=Sofas" },
-    { id: 3, title: "Executive Desks", image: "/uploads/ref/9eaf23_7ec867a764ba4e7d94e754dba5ce8965~mv2.avif", link: "/collections?category=Desks" },
-    { id: 4, title: "Lounge Chairs", image: "/uploads/ref/Modern Orange Wire Chair.avif", link: "/collections?category=Lounge" },
-    { id: 5, title: "Workstations", image: "/uploads/ref/9eaf23_c013e69393c9400b9c987cd9fed03bb5~mv2.avif", link: "/collections?category=Workstations" },
+const collections = [
+    { id: 1, title: "Chairs", image: "/uploads/ref/chairs.avif", link: "/collections?category=Chairs" },
+    { id: 2, title: "Modular Sofas", image: "/uploads/ref/sofas.avif", link: "/collections?category=Sofas" },
+    { id: 3, title: "Executive Desks", image: "/uploads/ref/tables.avif", link: "/collections?category=Desks" },
+    { id: 4, title: "Lounge Chairs", image: "/uploads/ref/lounge.avif", link: "/collections?category=Lounge" },
+    { id: 5, title: "Carpets", image: "/uploads/ref/carpets.avif", link: "/collections?category=Carpets" },
 ];
 
 export default function HorizontalScroll() {
@@ -19,37 +18,49 @@ export default function HorizontalScroll() {
         target: targetRef,
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ["1%", "-75%"]);
+    // Gentle horizontal drift
+    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-60%"]);
 
     return (
-        <section ref={targetRef} className="relative h-[300vh] bg-neutral-100">
-            <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
-                <div className="px-12 mb-8 flex justify-between items-end">
+        <section ref={targetRef} className="relative h-[300vh] bg-white text-black">
+            <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden py-20">
+
+                {/* Section Header */}
+                <div className="container mx-auto px-6 md:px-12 mb-12 flex items-end justify-between">
                     <div>
-                        <h2 className="text-4xl font-bold uppercase tracking-tight mb-2">Collections</h2>
-                        <p className="text-black/60 max-w-sm">Explore our wide range of premium office solutions tailored for productivity.</p>
+                        <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4">Collections</h2>
+                        <p className="text-neutral-500 max-w-sm">Explore our wide range of premium office solutions.</p>
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-widest border-b border-black pb-1">Scroll to Explore</span>
                 </div>
 
-                <motion.div style={{ x }} className="flex gap-12 px-12">
-                    {items.map((item) => (
-                        <Link href={item.link} key={item.id} className="group relative h-[60vh] aspect-[3/4] shrink-0 overflow-hidden bg-white shadow-xl rounded-none">
-                            <motion.img
-                                whileHover={{ scale: 1.05 }}
-                                transition={{ duration: 0.5 }}
+                {/* Glassy Cards Horizontal Scroll */}
+                <motion.div style={{ x }} className="flex gap-8 px-6 md:px-12 w-max">
+                    {collections.map((item) => (
+                        <Link
+                            href={item.link}
+                            key={item.id}
+                            className="group relative h-[60vh] w-[400px] rounded-[3rem] overflow-hidden bg-neutral-100 border border-neutral-200 shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.01]"
+                        >
+                            <img
                                 src={item.image}
                                 alt={item.title}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                             />
-                            <div className="absolute bottom-0 left-0 p-6 bg-white/90 w-full">
-                                <h3 className="text-lg font-bold uppercase tracking-wide">{item.title}</h3>
+
+                            {/* Permanent Frosted Glass Label - 'Liquid Glass' UI */}
+                            {/* Using bg-white/30 and backdrop-blur-xl for a true 'frost' effect that isn't solid white */}
+                            <div className="absolute bottom-8 left-0 right-0 z-20 flex justify-center pointer-events-none">
+                                <div className="backdrop-blur-xl bg-white/30 border border-white/20 shadow-lg px-8 py-4 rounded-full">
+                                    <h3 className="text-sm font-bold uppercase tracking-widest text-black/80">{item.title}</h3>
+                                </div>
                             </div>
                         </Link>
                     ))}
-                    <div className="h-[60vh] aspect-[3/4] shrink-0 flex items-center justify-center bg-black text-white">
-                        <Link href="/collections" className="text-2xl font-bold uppercase tracking-tight hover:text-white/70 transition-colors">
-                            View All <br /> Collections
+
+                    {/* 'View All' Card */}
+                    <div className="h-[60vh] w-[300px] flex items-center justify-center">
+                        <Link href="/collections" className="glass-button w-40 h-40 rounded-full flex items-center justify-center text-center text-sm font-bold uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all">
+                            View All
                         </Link>
                     </div>
                 </motion.div>
