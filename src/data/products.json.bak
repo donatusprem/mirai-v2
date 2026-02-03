@@ -1,0 +1,1653 @@
+[
+  {
+    "id": 201,
+    "name": "Birla",
+    "category": "Sofas",
+    "subcategory": "1 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 21657,
+    "image": "/uploads/1-seater-sofa/birla.webp",
+    "description": ""
+  },
+  {
+    "id": 202,
+    "name": "1 Seater Sofa Cgb",
+    "category": "Sofas",
+    "subcategory": "1 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 24839,
+    "image": "/uploads/1-seater-sofa/cgb.webp",
+    "description": ""
+  },
+  {
+    "id": 203,
+    "name": "1 Seater Sofa Ma'",
+    "category": "Sofas",
+    "subcategory": "1 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 17303,
+    "image": "/uploads/1-seater-sofa/ma.webp",
+    "description": ""
+  },
+  {
+    "id": 204,
+    "name": "1 Seater Sofa Sch",
+    "category": "Sofas",
+    "subcategory": "1 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 24561,
+    "image": "/uploads/1-seater-sofa/sch.webp"
+  },
+  {
+    "id": 205,
+    "name": "Sch2",
+    "category": "Sofas",
+    "subcategory": "1 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 17959,
+    "image": "/uploads/1-seater-sofa/sch2.webp"
+  },
+  {
+    "id": 206,
+    "name": "1 Seater Sofa Zx",
+    "category": "Sofas",
+    "subcategory": "1 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 17131,
+    "image": "/uploads/1-seater-sofa/zx.webp"
+  },
+  {
+    "id": 207,
+    "name": "91 Spring Board  Chennai  Sofa",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 25706,
+    "image": "/uploads/2-seater-sofa/91-spring-board-chennai-sofa.webp"
+  },
+  {
+    "id": 208,
+    "name": "Arsh",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 21434,
+    "image": "/uploads/2-seater-sofa/arsh.webp"
+  },
+  {
+    "id": 209,
+    "name": "Birla",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 19951,
+    "image": "/uploads/2-seater-sofa/birla.webp"
+  },
+  {
+    "id": 210,
+    "name": "Cddf",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 18848,
+    "image": "/uploads/2-seater-sofa/cddf.webp"
+  },
+  {
+    "id": 211,
+    "name": "2 Seater Sofa Cf",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 20257,
+    "image": "/uploads/2-seater-sofa/cf.webp"
+  },
+  {
+    "id": 212,
+    "name": "2 Seater Sofa Cgb",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 20734,
+    "image": "/uploads/2-seater-sofa/cgb.webp"
+  },
+  {
+    "id": 213,
+    "name": "Cgb1",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 28158,
+    "image": "/uploads/2-seater-sofa/cgb1.webp"
+  },
+  {
+    "id": 214,
+    "name": "2 Seater Sofa Co3",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 24648,
+    "image": "/uploads/2-seater-sofa/co3.webp"
+  },
+  {
+    "id": 215,
+    "name": "2 Seater Sofa Coh",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 22751,
+    "image": "/uploads/2-seater-sofa/coh.webp"
+  },
+  {
+    "id": 216,
+    "name": "2 Seater Sofa Cs",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 20049,
+    "image": "/uploads/2-seater-sofa/cs.webp"
+  },
+  {
+    "id": 217,
+    "name": "2 Seater Sofa Sb1",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 19766,
+    "image": "/uploads/2-seater-sofa/sb1.webp"
+  },
+  {
+    "id": 218,
+    "name": "2 Seater Sofa Sb2",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 24353,
+    "image": "/uploads/2-seater-sofa/sb2.webp"
+  },
+  {
+    "id": 219,
+    "name": "2 Seater Sofa Sch",
+    "category": "Sofas",
+    "subcategory": "2 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 27929,
+    "image": "/uploads/2-seater-sofa/sch.webp"
+  },
+  {
+    "id": 220,
+    "name": "Acme Chennai Sofa 2",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 35926,
+    "image": "/uploads/3-seater-sofa/acme-chennai-sofa-2.webp"
+  },
+  {
+    "id": 221,
+    "name": "Acme Chennai Sofa",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 25841,
+    "image": "/uploads/3-seater-sofa/acme-chennai-sofa.webp"
+  },
+  {
+    "id": 222,
+    "name": "Birla2",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 36313,
+    "image": "/uploads/3-seater-sofa/birla2.webp"
+  },
+  {
+    "id": 223,
+    "name": "3 Seater Sofa Cf",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 31215,
+    "image": "/uploads/3-seater-sofa/cf.webp"
+  },
+  {
+    "id": 224,
+    "name": "3 Seater Sofa Co",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 23217,
+    "image": "/uploads/3-seater-sofa/co.webp"
+  },
+  {
+    "id": 225,
+    "name": "3 Seater Sofa Co2",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 22714,
+    "image": "/uploads/3-seater-sofa/co2.webp"
+  },
+  {
+    "id": 226,
+    "name": "3 Seater Sofa Co4",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 30070,
+    "image": "/uploads/3-seater-sofa/co4.webp"
+  },
+  {
+    "id": 227,
+    "name": "3 Seater Sofa Co5",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 23115,
+    "image": "/uploads/3-seater-sofa/co5.webp"
+  },
+  {
+    "id": 228,
+    "name": "3 Seater Sofa Ka",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 26722,
+    "image": "/uploads/3-seater-sofa/ka.webp"
+  },
+  {
+    "id": 229,
+    "name": "3 Seater Sofa Ma",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 34369,
+    "image": "/uploads/3-seater-sofa/ma.webp"
+  },
+  {
+    "id": 230,
+    "name": "3 Seater Sofa Sch",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 37066,
+    "image": "/uploads/3-seater-sofa/sch.webp"
+  },
+  {
+    "id": 231,
+    "name": "Sch1",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 33246,
+    "image": "/uploads/3-seater-sofa/sch1.webp"
+  },
+  {
+    "id": 232,
+    "name": "Sch2",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 28174,
+    "image": "/uploads/3-seater-sofa/sch2.webp"
+  },
+  {
+    "id": 233,
+    "name": "Sch3",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 29391,
+    "image": "/uploads/3-seater-sofa/sch3.webp"
+  },
+  {
+    "id": 234,
+    "name": "Sofa",
+    "category": "Sofas",
+    "subcategory": "3 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 24713,
+    "image": "/uploads/3-seater-sofa/sofa.webp"
+  },
+  {
+    "id": 235,
+    "name": "5 Seater Sofa Sch",
+    "category": "Sofas",
+    "subcategory": "5 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 44730,
+    "image": "/uploads/5-seater-sofa/sch.webp"
+  },
+  {
+    "id": 236,
+    "name": "Vilal",
+    "category": "Sofas",
+    "subcategory": "5 seater sofa",
+    "color": "bg-neutral-200",
+    "price": 44550,
+    "image": "/uploads/5-seater-sofa/vilal.webp"
+  },
+  {
+    "id": 237,
+    "name": "Acme Chennai Chair",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 9878,
+    "image": "/uploads/accent-lounge-chair/acme-chennai-chair.webp"
+  },
+  {
+    "id": 238,
+    "name": "Acme Chennai Single Seaterlounge Chair",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 12284,
+    "image": "/uploads/accent-lounge-chair/acme-chennai-single-seaterlounge-chair.webp"
+  },
+  {
+    "id": 239,
+    "name": "Arsh Add",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 9322,
+    "image": "/uploads/accent-lounge-chair/arsh-add.webp"
+  },
+  {
+    "id": 240,
+    "name": "Birla 2",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 12559,
+    "image": "/uploads/accent-lounge-chair/birla-2.webp"
+  },
+  {
+    "id": 241,
+    "name": "Accent Lounge Chair Btc",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 11056,
+    "image": "/uploads/accent-lounge-chair/btc.webp"
+  },
+  {
+    "id": 242,
+    "name": "Accent Lounge Chair Cf",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 10150,
+    "image": "/uploads/accent-lounge-chair/cf.webp"
+  },
+  {
+    "id": 243,
+    "name": "Accent Lounge Chair Cf1",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 12433,
+    "image": "/uploads/accent-lounge-chair/cf1.webp"
+  },
+  {
+    "id": 244,
+    "name": "Accent Lounge Chair Cf2",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 11514,
+    "image": "/uploads/accent-lounge-chair/cf2.webp"
+  },
+  {
+    "id": 245,
+    "name": "Accent Lounge Chair Cgb",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 9888,
+    "image": "/uploads/accent-lounge-chair/cgb.webp"
+  },
+  {
+    "id": 246,
+    "name": "Co 10",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 12756,
+    "image": "/uploads/accent-lounge-chair/co-10.webp"
+  },
+  {
+    "id": 247,
+    "name": "Co 8",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 10530,
+    "image": "/uploads/accent-lounge-chair/co-8.webp"
+  },
+  {
+    "id": 248,
+    "name": "Co 9",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 9058,
+    "image": "/uploads/accent-lounge-chair/co-9.webp"
+  },
+  {
+    "id": 249,
+    "name": "Accent Lounge Chair Co1",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 10849,
+    "image": "/uploads/accent-lounge-chair/co1.webp"
+  },
+  {
+    "id": 250,
+    "name": "Accent Lounge Chair Co2",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 9527,
+    "image": "/uploads/accent-lounge-chair/co2.webp"
+  },
+  {
+    "id": 251,
+    "name": "Accent Lounge Chair Co3",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 10471,
+    "image": "/uploads/accent-lounge-chair/co3.webp"
+  },
+  {
+    "id": 252,
+    "name": "Accent Lounge Chair Co4",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 12270,
+    "image": "/uploads/accent-lounge-chair/co4.webp"
+  },
+  {
+    "id": 253,
+    "name": "Accent Lounge Chair Co5",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 8584,
+    "image": "/uploads/accent-lounge-chair/co5.webp"
+  },
+  {
+    "id": 254,
+    "name": "Accent Lounge Chair Co6",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 11770,
+    "image": "/uploads/accent-lounge-chair/co6.webp"
+  },
+  {
+    "id": 255,
+    "name": "Accent Lounge Chair Co7",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 10191,
+    "image": "/uploads/accent-lounge-chair/co7.webp"
+  },
+  {
+    "id": 256,
+    "name": "Ehee",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 12675,
+    "image": "/uploads/accent-lounge-chair/ehee.webp"
+  },
+  {
+    "id": 257,
+    "name": "Accent Lounge Chair Ii",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 9719,
+    "image": "/uploads/accent-lounge-chair/ii.webp"
+  },
+  {
+    "id": 258,
+    "name": "Accent Lounge Chair Ka1",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 10533,
+    "image": "/uploads/accent-lounge-chair/ka1.webp"
+  },
+  {
+    "id": 259,
+    "name": "Accent Lounge Chair Ka2",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 10167,
+    "image": "/uploads/accent-lounge-chair/ka2.webp"
+  },
+  {
+    "id": 260,
+    "name": "Accent Lounge Chair Ma",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 9289,
+    "image": "/uploads/accent-lounge-chair/ma.webp"
+  },
+  {
+    "id": 261,
+    "name": "Accent Lounge Chair Sb1",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 10446,
+    "image": "/uploads/accent-lounge-chair/sb1.webp"
+  },
+  {
+    "id": 262,
+    "name": "Accent Lounge Chair Sb2",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 8624,
+    "image": "/uploads/accent-lounge-chair/sb2.webp"
+  },
+  {
+    "id": 263,
+    "name": "Accent Lounge Chair Sch",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 9913,
+    "image": "/uploads/accent-lounge-chair/sch.webp"
+  },
+  {
+    "id": 264,
+    "name": "Sch1",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 12980,
+    "image": "/uploads/accent-lounge-chair/sch1.webp"
+  },
+  {
+    "id": 265,
+    "name": "Sch2",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 9116,
+    "image": "/uploads/accent-lounge-chair/sch2.webp"
+  },
+  {
+    "id": 266,
+    "name": "Accent Lounge Chair Xz",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 9106,
+    "image": "/uploads/accent-lounge-chair/xz.webp"
+  },
+  {
+    "id": 267,
+    "name": "Accent Lounge Chair Xzs",
+    "category": "Chairs",
+    "subcategory": "Accent Lounge Chair",
+    "color": "bg-neutral-200",
+    "price": 11348,
+    "image": "/uploads/accent-lounge-chair/xzs.webp"
+  },
+  {
+    "id": 268,
+    "name": "Acme Chennai 2",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 9980,
+    "image": "/uploads/barstool/acme-chennai-2.webp"
+  },
+  {
+    "id": 269,
+    "name": "Acme Chennai",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 12012,
+    "image": "/uploads/barstool/acme-chennai.webp"
+  },
+  {
+    "id": 270,
+    "name": "Arsh Add",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 10472,
+    "image": "/uploads/barstool/arsh-add.webp"
+  },
+  {
+    "id": 271,
+    "name": "Birla",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 12356,
+    "image": "/uploads/barstool/birla.webp"
+  },
+  {
+    "id": 272,
+    "name": "Birla2",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 10367,
+    "image": "/uploads/barstool/birla2.webp"
+  },
+  {
+    "id": 273,
+    "name": "Barstool Btc",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 12702,
+    "image": "/uploads/barstool/btc.webp"
+  },
+  {
+    "id": 274,
+    "name": "Barstool Co4",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 11445,
+    "image": "/uploads/barstool/co4.webp"
+  },
+  {
+    "id": 275,
+    "name": "Barstool Hhh",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 11876,
+    "image": "/uploads/barstool/hhh.webp"
+  },
+  {
+    "id": 276,
+    "name": "Kalina",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 12415,
+    "image": "/uploads/barstool/kalina.webp"
+  },
+  {
+    "id": 277,
+    "name": "Barstool Ooo",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 11853,
+    "image": "/uploads/barstool/ooo.webp"
+  },
+  {
+    "id": 278,
+    "name": "Barstool Sb",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 12795,
+    "image": "/uploads/barstool/sb.webp"
+  },
+  {
+    "id": 279,
+    "name": "Barstool Sb2",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 12106,
+    "image": "/uploads/barstool/sb2.webp"
+  },
+  {
+    "id": 280,
+    "name": "Barstool Sch",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 11643,
+    "image": "/uploads/barstool/sch.webp"
+  },
+  {
+    "id": 281,
+    "name": "Barstool Uuu",
+    "category": "Chairs",
+    "subcategory": "Barstool",
+    "color": "bg-neutral-200",
+    "price": 11658,
+    "image": "/uploads/barstool/uuu.webp"
+  },
+  {
+    "id": 282,
+    "name": "91 Spring Board  Chennai Centre Table",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 18936,
+    "image": "/uploads/centre-table/91-spring-board-chennai-centre-table.webp"
+  },
+  {
+    "id": 283,
+    "name": "Acme Chennai",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 18470,
+    "image": "/uploads/centre-table/acme-chennai.webp"
+  },
+  {
+    "id": 284,
+    "name": "Birla",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 15300,
+    "image": "/uploads/centre-table/birla.webp"
+  },
+  {
+    "id": 285,
+    "name": "Blend The Background",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 18707,
+    "image": "/uploads/centre-table/blend-the-background.webp"
+  },
+  {
+    "id": 286,
+    "name": "Centre Table Cgb",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 13564,
+    "image": "/uploads/centre-table/cgb.webp"
+  },
+  {
+    "id": 287,
+    "name": "Co 5",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 15160,
+    "image": "/uploads/centre-table/co-5.webp"
+  },
+  {
+    "id": 288,
+    "name": "Centre Table Gkg",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 18391,
+    "image": "/uploads/centre-table/gkg.webp"
+  },
+  {
+    "id": 289,
+    "name": "Ikfnfnf",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 19819,
+    "image": "/uploads/centre-table/ikfnfnf.webp"
+  },
+  {
+    "id": 290,
+    "name": "Kalina",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 14795,
+    "image": "/uploads/centre-table/kalina.webp"
+  },
+  {
+    "id": 291,
+    "name": "Kalina1",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 19137,
+    "image": "/uploads/centre-table/kalina1.webp"
+  },
+  {
+    "id": 292,
+    "name": "Centre Table Sb",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 18155,
+    "image": "/uploads/centre-table/sb.webp"
+  },
+  {
+    "id": 293,
+    "name": "Serko",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 12235,
+    "image": "/uploads/centre-table/serko.webp"
+  },
+  {
+    "id": 294,
+    "name": "Centre Table Xyz",
+    "category": "Tables",
+    "subcategory": "Centre Table",
+    "color": "bg-neutral-200",
+    "price": 12794,
+    "image": "/uploads/centre-table/xyz.webp"
+  },
+  {
+    "id": 295,
+    "name": "Acme Chennai 2.1",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 10711,
+    "image": "/uploads/dining-chair/acme-chennai-21.webp"
+  },
+  {
+    "id": 296,
+    "name": "Acme Chennai 2",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 12118,
+    "image": "/uploads/dining-chair/acme-chennai-2.webp"
+  },
+  {
+    "id": 297,
+    "name": "Acme Chennai 3.1",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 10298,
+    "image": "/uploads/dining-chair/acme-chennai-31.webp"
+  },
+  {
+    "id": 298,
+    "name": "Acme Chennai 3",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 9251,
+    "image": "/uploads/dining-chair/acme-chennai-3.webp"
+  },
+  {
+    "id": 299,
+    "name": "Acme Chennai",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 9800,
+    "image": "/uploads/dining-chair/acme-chennai.webp"
+  },
+  {
+    "id": 300,
+    "name": "Arsh Add",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 8159,
+    "image": "/uploads/dining-chair/arsh-add.webp"
+  },
+  {
+    "id": 301,
+    "name": "Birla",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 9124,
+    "image": "/uploads/dining-chair/birla.webp"
+  },
+  {
+    "id": 302,
+    "name": "Birla2",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 9515,
+    "image": "/uploads/dining-chair/birla2.webp"
+  },
+  {
+    "id": 303,
+    "name": "Birla3",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 11661,
+    "image": "/uploads/dining-chair/birla3.webp"
+  },
+  {
+    "id": 304,
+    "name": "Dining Chair Cf2",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 11047,
+    "image": "/uploads/dining-chair/cf2.webp"
+  },
+  {
+    "id": 305,
+    "name": "Dining Chair Cgb",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 10041,
+    "image": "/uploads/dining-chair/cgb.webp"
+  },
+  {
+    "id": 306,
+    "name": "Cgb1",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 9078,
+    "image": "/uploads/dining-chair/cgb1.webp"
+  },
+  {
+    "id": 307,
+    "name": "Cgbbb",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 9601,
+    "image": "/uploads/dining-chair/cgbbb.webp"
+  },
+  {
+    "id": 308,
+    "name": "Dining Chair Ka1",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 12758,
+    "image": "/uploads/dining-chair/ka1.webp"
+  },
+  {
+    "id": 309,
+    "name": "Dining Chair Ka2",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 9640,
+    "image": "/uploads/dining-chair/ka2.webp"
+  },
+  {
+    "id": 310,
+    "name": "Onsemi",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 12346,
+    "image": "/uploads/dining-chair/onsemi.webp"
+  },
+  {
+    "id": 311,
+    "name": "Dining Chair Sch",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 11608,
+    "image": "/uploads/dining-chair/sch.webp"
+  },
+  {
+    "id": 312,
+    "name": "Dining Chair Xzx",
+    "category": "Chairs",
+    "subcategory": "Dining Chair",
+    "color": "bg-neutral-200",
+    "price": 8169,
+    "image": "/uploads/dining-chair/xzx.webp"
+  },
+  {
+    "id": 313,
+    "name": "91 Spring Board  Chennai High Table",
+    "category": "Tables",
+    "subcategory": "High table",
+    "color": "bg-neutral-200",
+    "price": 13809,
+    "image": "/uploads/high-table/91-spring-board-chennai-high-table.webp"
+  },
+  {
+    "id": 314,
+    "name": "High Table Sb1",
+    "category": "Tables",
+    "subcategory": "High table",
+    "color": "bg-neutral-200",
+    "price": 13860,
+    "image": "/uploads/high-table/sb1.webp"
+  },
+  {
+    "id": 315,
+    "name": "High Table Sb2",
+    "category": "Tables",
+    "subcategory": "High table",
+    "color": "bg-neutral-200",
+    "price": 15671,
+    "image": "/uploads/high-table/sb2.webp"
+  },
+  {
+    "id": 316,
+    "name": "High Table Sb3",
+    "category": "Tables",
+    "subcategory": "High table",
+    "color": "bg-neutral-200",
+    "price": 12638,
+    "image": "/uploads/high-table/sb3.webp"
+  },
+  {
+    "id": 317,
+    "name": "High Table Sb4",
+    "category": "Tables",
+    "subcategory": "High table",
+    "color": "bg-neutral-200",
+    "price": 13199,
+    "image": "/uploads/high-table/sb4.webp"
+  },
+  {
+    "id": 318,
+    "name": "High Table Sb5",
+    "category": "Tables",
+    "subcategory": "High table",
+    "color": "bg-neutral-200",
+    "price": 18468,
+    "image": "/uploads/high-table/sb5.webp"
+  },
+  {
+    "id": 319,
+    "name": "Birla",
+    "category": "Kids Furniture",
+    "subcategory": "Kids chair",
+    "color": "bg-neutral-200",
+    "price": 4713,
+    "image": "/uploads/kids-chair/birla.webp"
+  },
+  {
+    "id": 320,
+    "name": "Birla",
+    "category": "Kids Furniture",
+    "subcategory": "Kids table",
+    "color": "bg-neutral-200",
+    "price": 5898,
+    "image": "/uploads/kids-table/birla.webp"
+  },
+  {
+    "id": 321,
+    "name": "Outdoor Chairs Cf",
+    "category": "Outdoor",
+    "subcategory": "outdoor chairs",
+    "color": "bg-neutral-200",
+    "price": 14469,
+    "image": "/uploads/outdoor-chairs/cf.webp"
+  },
+  {
+    "id": 322,
+    "name": "Outdoor Chairs Cf1",
+    "category": "Outdoor",
+    "subcategory": "outdoor chairs",
+    "color": "bg-neutral-200",
+    "price": 12788,
+    "image": "/uploads/outdoor-chairs/cf1.webp"
+  },
+  {
+    "id": 323,
+    "name": "Outdoor Chairs Cf2",
+    "category": "Outdoor",
+    "subcategory": "outdoor chairs",
+    "color": "bg-neutral-200",
+    "price": 11668,
+    "image": "/uploads/outdoor-chairs/cf2.webp"
+  },
+  {
+    "id": 324,
+    "name": "Outdoor Tables Cf",
+    "category": "Outdoor",
+    "subcategory": "outdoor tables",
+    "color": "bg-neutral-200",
+    "price": 14796,
+    "image": "/uploads/outdoor-tables/cf.webp"
+  },
+  {
+    "id": 325,
+    "name": "Outdoor Tables Cf1",
+    "category": "Outdoor",
+    "subcategory": "outdoor tables",
+    "color": "bg-neutral-200",
+    "price": 14439,
+    "image": "/uploads/outdoor-tables/cf1.webp"
+  },
+  {
+    "id": 326,
+    "name": "Planters Sb1",
+    "category": "Outdoor",
+    "subcategory": "planters",
+    "color": "bg-neutral-200",
+    "price": 10907,
+    "image": "/uploads/planters/sb1.webp"
+  },
+  {
+    "id": 327,
+    "name": "Planters Sb2",
+    "category": "Outdoor",
+    "subcategory": "planters",
+    "color": "bg-neutral-200",
+    "price": 11365,
+    "image": "/uploads/planters/sb2.webp"
+  },
+  {
+    "id": 328,
+    "name": "Planters Sb3",
+    "category": "Outdoor",
+    "subcategory": "planters",
+    "color": "bg-neutral-200",
+    "price": 14673,
+    "image": "/uploads/planters/sb3.webp"
+  },
+  {
+    "id": 329,
+    "name": "Acme Chennai Pouffe",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 8330,
+    "image": "/uploads/pouffe/acme-chennai-pouffe.webp"
+  },
+  {
+    "id": 330,
+    "name": "Pouffe B",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 7131,
+    "image": "/uploads/pouffe/b.webp"
+  },
+  {
+    "id": 331,
+    "name": "Birla",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 6568,
+    "image": "/uploads/pouffe/birla.webp"
+  },
+  {
+    "id": 332,
+    "name": "Birla2",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 8579,
+    "image": "/uploads/pouffe/birla2.webp"
+  },
+  {
+    "id": 333,
+    "name": "Pouffe Btc",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 7132,
+    "image": "/uploads/pouffe/btc.webp"
+  },
+  {
+    "id": 334,
+    "name": "Pouffe Cf",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 6854,
+    "image": "/uploads/pouffe/cf.webp"
+  },
+  {
+    "id": 335,
+    "name": "Pouffe Co4",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 8724,
+    "image": "/uploads/pouffe/co4.webp"
+  },
+  {
+    "id": 336,
+    "name": "Mayon",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 7816,
+    "image": "/uploads/pouffe/mayon.webp"
+  },
+  {
+    "id": 337,
+    "name": "Pouffe Sch",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 8153,
+    "image": "/uploads/pouffe/sch.webp"
+  },
+  {
+    "id": 338,
+    "name": "Sch1",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 6826,
+    "image": "/uploads/pouffe/sch1.webp"
+  },
+  {
+    "id": 339,
+    "name": "Sch2",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 8542,
+    "image": "/uploads/pouffe/sch2.webp"
+  },
+  {
+    "id": 340,
+    "name": "Sch3",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 7115,
+    "image": "/uploads/pouffe/sch3.webp"
+  },
+  {
+    "id": 341,
+    "name": "Serko",
+    "category": "Lounge",
+    "subcategory": "Pouffe",
+    "color": "bg-neutral-200",
+    "price": 8848,
+    "image": "/uploads/pouffe/serko.webp"
+  },
+  {
+    "id": 342,
+    "name": "Reception Table Cgb",
+    "category": "Tables",
+    "subcategory": "reception table",
+    "color": "bg-neutral-200",
+    "price": 19850,
+    "image": "/uploads/reception-table/cgb.webp"
+  },
+  {
+    "id": 343,
+    "name": "Acme Chennai",
+    "category": "Chairs",
+    "subcategory": "Recliners",
+    "color": "bg-neutral-200",
+    "price": 11883,
+    "image": "/uploads/recliners/acme-chennai.webp"
+  },
+  {
+    "id": 344,
+    "name": "Acme Chennai",
+    "category": "Tables",
+    "subcategory": "Side Table",
+    "color": "bg-neutral-200",
+    "price": 13463,
+    "image": "/uploads/side-table/acme-chennai.webp"
+  },
+  {
+    "id": 345,
+    "name": "Arsh",
+    "category": "Tables",
+    "subcategory": "Side Table",
+    "color": "bg-neutral-200",
+    "price": 16673,
+    "image": "/uploads/side-table/arsh.webp"
+  },
+  {
+    "id": 346,
+    "name": "Side Table Cf",
+    "category": "Tables",
+    "subcategory": "Side Table",
+    "color": "bg-neutral-200",
+    "price": 19413,
+    "image": "/uploads/side-table/cf.webp"
+  },
+  {
+    "id": 347,
+    "name": "Side Table Cf1",
+    "category": "Tables",
+    "subcategory": "Side Table",
+    "color": "bg-neutral-200",
+    "price": 14781,
+    "image": "/uploads/side-table/cf1.webp"
+  },
+  {
+    "id": 348,
+    "name": "Cgb1",
+    "category": "Tables",
+    "subcategory": "Side Table",
+    "color": "bg-neutral-200",
+    "price": 13622,
+    "image": "/uploads/side-table/cgb1.webp"
+  },
+  {
+    "id": 349,
+    "name": "Cgb2",
+    "category": "Tables",
+    "subcategory": "Side Table",
+    "color": "bg-neutral-200",
+    "price": 16731,
+    "image": "/uploads/side-table/cgb2.webp"
+  },
+  {
+    "id": 350,
+    "name": "Side Table Co5",
+    "category": "Tables",
+    "subcategory": "Side Table",
+    "color": "bg-neutral-200",
+    "price": 19315,
+    "image": "/uploads/side-table/co5.webp"
+  },
+  {
+    "id": 351,
+    "name": "Side Table Sbc",
+    "category": "Tables",
+    "subcategory": "Side Table",
+    "color": "bg-neutral-200",
+    "price": 19790,
+    "image": "/uploads/side-table/sbc.webp"
+  },
+  {
+    "id": 352,
+    "name": "Serko",
+    "category": "Tables",
+    "subcategory": "Side Table",
+    "color": "bg-neutral-200",
+    "price": 12950,
+    "image": "/uploads/side-table/serko.webp"
+  },
+  {
+    "id": 353,
+    "name": "Swivel Chair Sch",
+    "category": "Chairs",
+    "subcategory": "swivel chair",
+    "color": "bg-neutral-200",
+    "price": 12298,
+    "image": "/uploads/swivel-chair/sch.webp"
+  },
+  {
+    "id": 354,
+    "name": "Sch1",
+    "category": "Chairs",
+    "subcategory": "swivel chair",
+    "color": "bg-neutral-200",
+    "price": 11482,
+    "image": "/uploads/swivel-chair/sch1.webp"
+  },
+  {
+    "id": 355,
+    "name": "Acme Chennai Table 2",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 16143,
+    "image": "/uploads/table/acme-chennai-table-2.webp"
+  },
+  {
+    "id": 356,
+    "name": "Acme Chennai Table 3",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 13762,
+    "image": "/uploads/table/acme-chennai-table-3.webp"
+  },
+  {
+    "id": 357,
+    "name": "Acme Chennai Table 4",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 18235,
+    "image": "/uploads/table/acme-chennai-table-4.webp"
+  },
+  {
+    "id": 358,
+    "name": "Acme Chennai Table",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 13764,
+    "image": "/uploads/table/acme-chennai-table.webp"
+  },
+  {
+    "id": 359,
+    "name": "Arsh Table",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 13759,
+    "image": "/uploads/table/arsh-table.webp"
+  },
+  {
+    "id": 360,
+    "name": "Arsh",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 16551,
+    "image": "/uploads/table/arsh.webp"
+  },
+  {
+    "id": 361,
+    "name": "Birla 2",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 13198,
+    "image": "/uploads/table/birla-2.webp"
+  },
+  {
+    "id": 362,
+    "name": "Birla 5",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 18589,
+    "image": "/uploads/table/birla-5.webp"
+  },
+  {
+    "id": 363,
+    "name": "Birla",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 19664,
+    "image": "/uploads/table/birla.webp"
+  },
+  {
+    "id": 364,
+    "name": "Birla3",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 15865,
+    "image": "/uploads/table/birla3.webp"
+  },
+  {
+    "id": 365,
+    "name": "Birla4",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 17553,
+    "image": "/uploads/table/birla4.webp"
+  },
+  {
+    "id": 366,
+    "name": "Table Cgb",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 13530,
+    "image": "/uploads/table/cgb.webp"
+  },
+  {
+    "id": 367,
+    "name": "Cgb1",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 12774,
+    "image": "/uploads/table/cgb1.webp"
+  },
+  {
+    "id": 368,
+    "name": "High Table",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 14385,
+    "image": "/uploads/table/high-table.webp"
+  },
+  {
+    "id": 369,
+    "name": "Kalina Table",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 16261,
+    "image": "/uploads/table/kalina-table.webp"
+  },
+  {
+    "id": 370,
+    "name": "Latop Table",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 16663,
+    "image": "/uploads/table/latop-table.webp"
+  },
+  {
+    "id": 371,
+    "name": "Onsemi1",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 19618,
+    "image": "/uploads/table/onsemi1.webp"
+  },
+  {
+    "id": 372,
+    "name": "Onsemi2",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 17465,
+    "image": "/uploads/table/onsemi2.webp"
+  },
+  {
+    "id": 373,
+    "name": "Peg Table",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 16562,
+    "image": "/uploads/table/peg-table.webp"
+  },
+  {
+    "id": 374,
+    "name": "Phone Booth Table",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 13937,
+    "image": "/uploads/table/phone-booth-table.webp"
+  },
+  {
+    "id": 375,
+    "name": "Picture1 (1)",
+    "category": "Tables",
+    "subcategory": "Table",
+    "color": "bg-neutral-200",
+    "price": 19986,
+    "image": "/uploads/1769682926234-Picture1__1_.jpg"
+  },
+  {
+    "id": 376,
+    "name": "Bench 2",
+    "category": "Furniture",
+    "color": "bg-neutral-200",
+    "price": 10009,
+    "image": "/uploads/bench-2.webp"
+  },
+  {
+    "id": 377,
+    "name": "Bench",
+    "category": "Furniture",
+    "color": "bg-neutral-200",
+    "price": 12988,
+    "image": "/uploads/bench.webp"
+  },
+  {
+    "id": 378,
+    "name": "Furniture Cgb",
+    "category": "Furniture",
+    "color": "bg-neutral-200",
+    "price": 11637,
+    "image": "/uploads/cgb.webp"
+  },
+  {
+    "id": 379,
+    "name": "Display Unit",
+    "category": "Furniture",
+    "color": "bg-neutral-200",
+    "price": 11609,
+    "image": "/uploads/display-unit.webp"
+  },
+  {
+    "id": 380,
+    "name": "Gemini Generated Image 79h9uo79h9uo79h9 (1)",
+    "category": "Furniture",
+    "color": "bg-neutral-200",
+    "price": 12597,
+    "image": "/uploads/gemini-generated-image-79h9uo79h9uo79h9-1.webp"
+  },
+  {
+    "id": 381,
+    "name": "Furniture Gfg",
+    "category": "Furniture",
+    "color": "bg-neutral-200",
+    "price": 9314,
+    "image": "/uploads/gfg.webp"
+  },
+  {
+    "id": 382,
+    "name": "Mayon",
+    "category": "Furniture",
+    "color": "bg-neutral-200",
+    "price": 12514,
+    "image": "/uploads/mayon.webp"
+  },
+  {
+    "id": 383,
+    "name": "Picture2 Upscaled",
+    "category": "Furniture",
+    "color": "bg-neutral-200",
+    "price": 11218,
+    "image": "/uploads/picture2-upscaled.webp"
+  },
+  {
+    "id": 384,
+    "name": "awefkguohbcljweBF",
+    "category": "Flooring",
+    "price": 28347,
+    "description": ":JSdvliDewnlebfohnfpkweng",
+    "image": "https://i.pinimg.com/736x/ae/6c/c1/ae6cc12c02fbeb929384d7bbd42a2070.jpg",
+    "color": "bg-neutral-200"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "productId": 202,
+    "productName": "1 Seater Sofa Cgb",
+    "quantity": 11,
+    "minStock": 5,
+    "lastUpdated": "2026-02-02T08:49:59.016Z"
+  },
+  {
+    "id": 2,
+    "productId": 201,
+    "productName": "Birla",
+    "quantity": 7,
+    "minStock": 5,
+    "lastUpdated": "2026-02-02T12:48:41.490Z"
+  },
+  {
+    "id": 3,
+    "productId": 203,
+    "productName": "1 Seater Sofa Ma'",
+    "quantity": 7,
+    "minStock": 5,
+    "lastUpdated": "2026-02-02T07:14:06.563Z"
+  },
+  {
+    "id": 4,
+    "productId": 384,
+    "productName": "awefkguohbcljweBF",
+    "quantity": 10,
+    "minStock": 5,
+    "lastUpdated": "2026-02-02T13:33:31.143Z"
+  }
+]
