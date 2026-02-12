@@ -41,9 +41,9 @@ export async function POST(request: NextRequest) {
         const body = await request.json();
         const { name, email, phone, company, message, items } = body;
 
-        if (!name || !email || !items || items.length === 0) {
+        if (!name || !email) {
             return NextResponse.json(
-                { error: "Name, email, and at least one item are required" },
+                { error: "Name and email are required" },
                 { status: 400 }
             );
         }
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
             phone: phone || undefined,
             company: company || undefined,
             message: message || undefined,
-            items,
+            items: items || [],
             status: "new",
             createdAt: new Date().toISOString(),
         };

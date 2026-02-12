@@ -4,6 +4,40 @@ import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
 export default function ContactPage() {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        message: ""
+    });
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus("loading");
+
+        try {
+            const response = await fetch("/api/enquiry", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ ...formData, items: [] })
+            });
+
+            if (!response.ok) throw new Error("Failed to submit");
+
+            setStatus("success");
+            setFormData({ name: "", email: "", phone: "", message: "" });
+            setTimeout(() => setStatus("idle"), 3000);
+        } catch {
+            setStatus("error");
+            setTimeout(() => setStatus("idle"), 3000);
+        }
+    };
+
     return (
         <main className="min-h-screen bg-[#f3f3f3] text-black selection:bg-black selection:text-white overflow-hidden relative">
 
@@ -75,36 +109,75 @@ export default function ContactPage() {
                         {/* Subtle form tint */}
                         <div className="absolute inset-0 bg-white/20 z-0" />
 
-                        <form className="relative z-10 space-y-8">
+                        <form onSubmit={handleSubmit} className="relative z-10 space-y-8">
                             <div className="space-y-2">
                                 <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">Name</label>
-                                <input type="text" className="w-full bg-transparent border-b-2 border-neutral-200 py-4 focus:border-black focus:outline-none transition-colors text-xl placeholder:text-neutral-300" placeholder="John Doe" />
+                                <input
+                                    type="text"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-transparent border-b-2 border-neutral-200 py-4 focus:border-black focus:outline-none transition-colors text-xl placeholder:text-neutral-300"
+                                    placeholder="John Doe"
+                                />
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">Email</label>
-                                <input type="email" className="w-full bg-transparent border-b-2 border-neutral-200 py-4 focus:border-black focus:outline-none transition-colors text-xl placeholder:text-neutral-300" placeholder="john@example.com" />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                    className="w-full bg-transparent border-b-2 border-neutral-200 py-4 focus:border-black focus:outline-none transition-colors text-xl placeholder:text-neutral-300"
+                                    placeholder="john@example.com"
+                                />
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">Phone Number</label>
-                                <input type="tel" className="w-full bg-transparent border-b-2 border-neutral-200 py-4 focus:border-black focus:outline-none transition-colors text-xl placeholder:text-neutral-300" placeholder="+91 98765 43210" />
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
+                                    className="w-full bg-transparent border-b-2 border-neutral-200 py-4 focus:border-black focus:outline-none transition-colors text-xl placeholder:text-neutral-300"
+                                    placeholder="+91 98765 43210"
+                                />
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-xs font-bold uppercase tracking-widest text-neutral-500">Message</label>
-                                <textarea className="w-full bg-transparent border-b-2 border-neutral-200 py-4 focus:border-black focus:outline-none transition-colors text-xl placeholder:text-neutral-300 min-h-[150px] resize-none" placeholder="Hello..." />
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    className="w-full bg-transparent border-b-2 border-neutral-200 py-4 focus:border-black focus:outline-none transition-colors text-xl placeholder:text-neutral-300 min-h-[150px] resize-none"
+                                    placeholder="Hello..."
+                                />
                             </div>
 
-                            <button type="button" className="group w-full bg-black text-white py-6 rounded-full font-bold uppercase tracking-widest hover:bg-neutral-800 transition-all flex items-center justify-center gap-4 overflow-hidden">
-                                <span className="relative z-10">Send Message</span>
-                                <motion.span
-                                    initial={{ x: 0 }}
-                                    whileHover={{ x: 5 }}
-                                    className="relative z-10"
-                                >
-                                    →
-                                </motion.span>
+                            <button
+                                type="submit"
+                                disabled={status === "loading" || status === "success"}
+                                className="group w-full bg-black text-white py-6 rounded-full font-bold uppercase tracking-widest hover:bg-neutral-800 transition-all flex items-center justify-center gap-4 overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed"
+                            >
+                                <span className="relative z-10">
+                                    {status === "loading" ? "Sending..." :
+                                        status === "success" ? "Message Sent!" :
+                                            status === "error" ? "Retry" : "Send Message"}
+                                </span>
+                                {status === "idle" && (
+                                    <motion.span
+                                        initial={{ x: 0 }}
+                                        whileHover={{ x: 5 }}
+                                        className="relative z-10"
+                                    >
+                                        →
+                                    </motion.span>
+                                )}
                             </button>
                         </form>
                     </motion.div>

@@ -168,9 +168,9 @@ export default function CartPanel() {
                                         <button
                                             type="submit"
                                             disabled={isSubmitting}
-                                            className="flex-1 py-3 bg-olive text-white rounded-lg hover:bg-olive/90 disabled:opacity-50"
+                                            className="flex-1 py-3 bg-neutral-900 text-white rounded-lg hover:bg-black disabled:opacity-50"
                                         >
-                                            {isSubmitting ? "Sending..." : "Send Quote Request"}
+                                            {isSubmitting ? "Sending..." : "Submit Quote"}
                                         </button>
                                     </div>
                                 </form>
@@ -238,7 +238,7 @@ export default function CartPanel() {
                                     onClick={() => setShowQuoteForm(true)}
                                     className="w-full py-4 bg-black/80 backdrop-blur-md border border-white/20 text-white font-bold uppercase tracking-wide rounded-2xl shadow-lg hover:bg-black hover:scale-[1.02] transition-all duration-300"
                                 >
-                                    Request Quote
+                                    Proceed to Submit
                                 </button>
                                 <button
                                     onClick={clearCart}

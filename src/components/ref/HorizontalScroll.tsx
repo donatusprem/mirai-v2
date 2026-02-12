@@ -9,7 +9,7 @@ const collections = [
     { id: 2, title: "Modular Sofas", image: "/uploads/ref/sofas.avif", link: "/collections?category=Sofas" },
     { id: 3, title: "Executive Desks", image: "/uploads/ref/tables.avif", link: "/collections?category=Desks" },
     { id: 4, title: "Lounge Chairs", image: "/uploads/ref/lounge.avif", link: "/collections?category=Lounge" },
-    { id: 5, title: "Carpets", image: "/uploads/ref/carpets.avif", link: "/collections?category=Carpets" },
+    { id: 5, title: "Flooring", image: "/uploads/ref/carpets.avif", link: "/collections?category=Flooring" },
 ];
 
 export default function HorizontalScroll() {

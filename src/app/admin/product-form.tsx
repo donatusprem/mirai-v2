@@ -78,7 +78,7 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
                         <input
                             name="name"
                             defaultValue={product?.name}
-                            className="w-full px-4 py-2 bg-neutral-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black/5"
+                            className="w-full px-4 py-2 bg-white border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition-all"
                             required
                         />
                     </div>
@@ -88,7 +88,7 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
                             type="number"
                             name="price"
                             defaultValue={product?.price}
-                            className="w-full px-4 py-2 bg-neutral-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black/5"
+                            className="w-full px-4 py-2 bg-white border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition-all"
                             required
                         />
                     </div>
@@ -98,7 +98,7 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
                             type="number"
                             name="stock"
                             defaultValue={initialStock}
-                            className="w-full px-4 py-2 bg-neutral-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black/5"
+                            className="w-full px-4 py-2 bg-white border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition-all"
                             min="0"
                         />
                     </div>
@@ -109,7 +109,7 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
                     <select
                         name="category"
                         defaultValue={product?.category || CATEGORIES[0]}
-                        className="w-full px-4 py-2 bg-neutral-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black/5"
+                        className="w-full px-4 py-2 bg-white border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition-all"
                     >
                         {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
                     </select>
@@ -120,7 +120,7 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
                     <textarea
                         name="description"
                         defaultValue={product?.description}
-                        className="w-full px-4 py-2 bg-neutral-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-black/5 h-24 resize-none"
+                        className="w-full px-4 py-2 bg-white border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition-all h-24 resize-none"
                     />
                 </div>
 

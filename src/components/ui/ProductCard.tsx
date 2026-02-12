@@ -1,8 +1,8 @@
-"use client";
-
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useState } from "react";
 
 interface Product {
     id: number | string;
@@ -19,11 +19,6 @@ interface ProductCardProps {
     index?: number;
     onClick?: (product: Product) => void;
 }
-
-import { useState } from "react";
-// ... existing imports
-
-// ... interfaces
 
 export default function ProductCard({ product, index = 0, onClick }: ProductCardProps) {
     const { addItem } = useCart();
@@ -52,9 +47,9 @@ export default function ProductCard({ product, index = 0, onClick }: ProductCard
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            className="group relative aspect-[3/4] overflow-hidden rounded-lg bg-neutral-50 shadow-sm hover:shadow-md transition-all duration-500"
+            viewport={{ once: true, margin: "50px" }}
+            transition={{ duration: 0.4 }}
+            className="group relative aspect-[3/4] overflow-hidden rounded-2xl bg-neutral-50 shadow-sm hover:shadow-md transition-all duration-500"
         >
             {/* Clickable overlay for product details */}
             <div onClick={handleClick} className="absolute inset-0 z-10 cursor-pointer" />
@@ -69,12 +64,27 @@ export default function ProductCard({ product, index = 0, onClick }: ProductCard
 
                 {(product.images?.[0] || product.image) && (
                     <>
-                        <img
-                            src={product.images?.[0] || product.image}
+                        {/* Primary Image */}
+                        <Image
+                            src={product.images?.[0] || product.image || ""}
                             alt={product.name}
-                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className={`object-cover transition-opacity duration-700 ease-in-out ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                             onLoad={() => setImageLoaded(true)}
                         />
+
+                        {/* Secondary Image (Hover) */}
+                        {product.images?.[1] && (
+                            <Image
+                                src={product.images[1]}
+                                alt={`${product.name} - View 2`}
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
+                            />
+                        )}
+
                         {/* Loading Overlay - Frosted Glass Effect */}
                         {!imageLoaded && (
                             <div className="absolute inset-0 flex items-center justify-center bg-neutral-100/50 backdrop-blur-sm z-10 transition-opacity duration-500">
@@ -88,10 +98,10 @@ export default function ProductCard({ product, index = 0, onClick }: ProductCard
             {/* Add to Quote Button */}
             <button
                 onClick={handleAddToCart}
-                className="absolute top-4 right-4 z-20 p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg opacity-0 group-hover:opacity-100 hover:bg-olive hover:text-white transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
+                className="absolute top-4 right-4 z-20 p-3 bg-white/40 backdrop-blur-md border border-white/30 rounded-2xl shadow-sm hover:shadow-lg hover:bg-white/60 hover:scale-105 active:scale-95 transition-all duration-300 transform text-black group-hover:opacity-100"
                 title="Add to Quote"
             >
-                <Plus size={18} />
+                <Plus size={20} />
             </button>
 
             {/* Content Overlay */}
@@ -102,7 +112,7 @@ export default function ProductCard({ product, index = 0, onClick }: ProductCard
                         <p className="text-xs text-black/60 mt-1">{product.category}</p>
                     </div>
                     {product.price && (
-                        <span className="text-sm font-medium text-olive">₹{product.price}</span>
+                        <span className="text-sm font-medium text-olive">₹{product.price.toLocaleString('en-IN')}</span>
                     )}
                 </div>
             </div>

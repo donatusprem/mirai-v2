@@ -6,10 +6,11 @@
     "subcategory": "1 seater sofa",
     "color": "bg-neutral-200",
     "price": 21657,
-    "image": "/uploads/1-seater-sofa/birla.webp",
+    "image": "/uploads/1770807786060-183-Untitled-1.png",
     "description": "",
     "images": [
-      "/uploads/1-seater-sofa/birla.webp"
+      "/uploads/1770807786060-183-Untitled-1.png",
+      "/uploads/1770807862131-518-Untitled-12.png"
     ]
   },
   {
@@ -19,10 +20,11 @@
     "subcategory": "1 seater sofa",
     "color": "bg-neutral-200",
     "price": 24839,
-    "image": "/uploads/1-seater-sofa/cgb.webp",
+    "image": "/uploads/1770807462830-297-Untitled-1.png",
     "description": "",
     "images": [
-      "/uploads/1-seater-sofa/cgb.webp"
+      "/uploads/1770807462830-297-Untitled-1.png",
+      "/uploads/1770807518738-823-Untitled-12.png"
     ]
   },
   {
@@ -32,10 +34,11 @@
     "subcategory": "1 seater sofa",
     "color": "bg-neutral-200",
     "price": 17303,
-    "image": "/uploads/1-seater-sofa/ma.webp",
+    "image": "/uploads/1770808081576-699-Untitled-13.png",
     "description": "",
     "images": [
-      "/uploads/1-seater-sofa/ma.webp"
+      "/uploads/1770808081576-699-Untitled-13.png",
+      "/uploads/1770808098424-584-Untitled-14.png"
     ]
   },
   {
@@ -45,10 +48,12 @@
     "subcategory": "1 seater sofa",
     "color": "bg-neutral-200",
     "price": 24561,
-    "image": "/uploads/1-seater-sofa/sch.webp",
+    "image": "/uploads/1770808464133-683-Untitled-1.png",
     "images": [
-      "/uploads/1-seater-sofa/sch.webp"
-    ]
+      "/uploads/1770808464133-683-Untitled-1.png",
+      "/uploads/1770808471796-862-Untitled-15.png"
+    ],
+    "description": ""
   },
   {
     "id": 205,
@@ -57,10 +62,12 @@
     "subcategory": "1 seater sofa",
     "color": "bg-neutral-200",
     "price": 17959,
-    "image": "/uploads/1-seater-sofa/sch2.webp",
+    "image": "/uploads/1770808570205-619-Untitled-16.png",
     "images": [
-      "/uploads/1-seater-sofa/sch2.webp"
-    ]
+      "/uploads/1770808570205-619-Untitled-16.png",
+      "/uploads/1770808577627-937-Untitled-17.png"
+    ],
+    "description": ""
   },
   {
     "id": 206,
@@ -69,10 +76,12 @@
     "subcategory": "1 seater sofa",
     "color": "bg-neutral-200",
     "price": 17131,
-    "image": "/uploads/1-seater-sofa/zx.webp",
+    "image": "/uploads/1770808708539-794-Untitled-18.png",
     "images": [
-      "/uploads/1-seater-sofa/zx.webp"
-    ]
+      "/uploads/1770808708539-794-Untitled-18.png",
+      "/uploads/1770808714786-515-Untitled-19.png"
+    ],
+    "description": ""
   },
   {
     "id": 207,
@@ -81,10 +90,12 @@
     "subcategory": "2 seater sofa",
     "color": "bg-neutral-200",
     "price": 25706,
-    "image": "/uploads/2-seater-sofa/91-spring-board-chennai-sofa.webp",
+    "image": "/uploads/1770809765838-811-Untitled-1.png",
     "images": [
-      "/uploads/2-seater-sofa/91-spring-board-chennai-sofa.webp"
-    ]
+      "/uploads/1770809765838-811-Untitled-1.png",
+      "/uploads/1770809771479-849-Untitled-12.png"
+    ],
+    "description": ""
   },
   {
     "id": 208,
@@ -93,10 +104,12 @@
     "subcategory": "2 seater sofa",
     "color": "bg-neutral-200",
     "price": 21434,
-    "image": "/uploads/2-seater-sofa/arsh.webp",
+    "image": "/uploads/1770809566584-288-Untitled-16.png",
     "images": [
-      "/uploads/2-seater-sofa/arsh.webp"
-    ]
+      "/uploads/1770809566584-288-Untitled-16.png",
+      "/uploads/1770809674918-21-Untitled-15.png"
+    ],
+    "description": ""
   },
   {
     "id": 209,
@@ -105,10 +118,12 @@
     "subcategory": "2 seater sofa",
     "color": "bg-neutral-200",
     "price": 19951,
-    "image": "/uploads/2-seater-sofa/birla.webp",
+    "image": "/uploads/1770809868727-115-Untitled-17.png",
     "images": [
-      "/uploads/2-seater-sofa/birla.webp"
-    ]
+      "/uploads/1770809868727-115-Untitled-17.png",
+      "/uploads/1770809874354-312-Untitled-18.png"
+    ],
+    "description": ""
   },
   {
     "id": 210,
@@ -117,10 +132,12 @@
     "subcategory": "2 seater sofa",
     "color": "bg-neutral-200",
     "price": 18848,
-    "image": "/uploads/2-seater-sofa/cddf.webp",
+    "image": "/uploads/1770810677394-547-Untitled-111.png",
     "images": [
-      "/uploads/2-seater-sofa/cddf.webp"
-    ]
+      "/uploads/1770810677394-547-Untitled-111.png",
+      "/uploads/1770810683162-587-Untitled-121.png"
+    ],
+    "description": ""
   },
   {
     "id": 211,
@@ -129,10 +146,12 @@
     "subcategory": "2 seater sofa",
     "color": "bg-neutral-200",
     "price": 20257,
-    "image": "/uploads/2-seater-sofa/cf.webp",
+    "image": "/uploads/1770810712406-738-Untitled-131.png",
     "images": [
-      "/uploads/2-seater-sofa/cf.webp"
-    ]
+      "/uploads/1770810712406-738-Untitled-131.png",
+      "/uploads/1770810718621-161-Untitled-141.png"
+    ],
+    "description": ""
   },
   {
     "id": 212,
@@ -141,10 +160,12 @@
     "subcategory": "2 seater sofa",
     "color": "bg-neutral-200",
     "price": 20734,
-    "image": "/uploads/2-seater-sofa/cgb.webp",
+    "image": "/uploads/1770811904092-10-Untitled-171.png",
     "images": [
-      "/uploads/2-seater-sofa/cgb.webp"
-    ]
+      "/uploads/1770811904092-10-Untitled-171.png",
+      "/uploads/1770811909450-382-Untitled-172.png"
+    ],
+    "description": ""
   },
   {
     "id": 213,
@@ -153,10 +174,12 @@
     "subcategory": "2 seater sofa",
     "color": "bg-neutral-200",
     "price": 28158,
-    "image": "/uploads/2-seater-sofa/cgb1.webp",
+    "image": "/uploads/1770812176114-498-Untitled-174.png",
     "images": [
-      "/uploads/2-seater-sofa/cgb1.webp"
-    ]
+      "/uploads/1770812176114-498-Untitled-174.png",
+      "/uploads/1770812181332-623-Untitled-175.png"
+    ],
+    "description": ""
   },
   {
     "id": 214,
@@ -165,10 +188,12 @@
     "subcategory": "2 seater sofa",
     "color": "bg-neutral-200",
     "price": 24648,
-    "image": "/uploads/2-seater-sofa/co3.webp",
+    "image": "/uploads/1770812264650-564-Untitled-176.png",
     "images": [
-      "/uploads/2-seater-sofa/co3.webp"
-    ]
+      "/uploads/1770812264650-564-Untitled-176.png",
+      "/uploads/1770812336831-123-Untitled-178.png"
+    ],
+    "description": ""
   },
   {
     "id": 215,
@@ -201,10 +226,12 @@
     "subcategory": "2 seater sofa",
     "color": "bg-neutral-200",
     "price": 19766,
-    "image": "/uploads/2-seater-sofa/sb1.webp",
+    "image": "/uploads/1770813705192-794-Untitled-179.png",
     "images": [
-      "/uploads/2-seater-sofa/sb1.webp"
-    ]
+      "/uploads/1770813705192-794-Untitled-179.png",
+      "/uploads/1770813711343-74-Untitled-180.png"
+    ],
+    "description": ""
   },
   {
     "id": 218,
@@ -213,10 +240,12 @@
     "subcategory": "2 seater sofa",
     "color": "bg-neutral-200",
     "price": 24353,
-    "image": "/uploads/2-seater-sofa/sb2.webp",
+    "image": "/uploads/1770814671812-0-Untitled-1722.png",
     "images": [
-      "/uploads/2-seater-sofa/sb2.webp"
-    ]
+      "/uploads/1770814671812-0-Untitled-1722.png",
+      "/uploads/1770814678286-803-Untitled-1711.png"
+    ],
+    "description": ""
   },
   {
     "id": 219,
@@ -225,10 +254,12 @@
     "subcategory": "2 seater sofa",
     "color": "bg-neutral-200",
     "price": 27929,
-    "image": "/uploads/2-seater-sofa/sch.webp",
+    "image": "/uploads/1770814764308-841-Untitled-1733.png",
     "images": [
-      "/uploads/2-seater-sofa/sch.webp"
-    ]
+      "/uploads/1770814764308-841-Untitled-1733.png",
+      "/uploads/1770814774399-44-Untitled-1744.png"
+    ],
+    "description": ""
   },
   {
     "id": 220,
@@ -2192,10 +2223,10 @@
   },
   {
     "id": 384,
-    "name": "awefkguohbcljweBF",
+    "name": "FLOOR RUG BIG 1",
     "category": "Flooring",
     "price": 28347,
-    "description": ":JSdvliDewnlebfohnfpkweng",
+    "description": "WONDERFUL FOR LOUNGES",
     "image": "https://i.pinimg.com/736x/ae/6c/c1/ae6cc12c02fbeb929384d7bbd42a2070.jpg",
     "color": "bg-neutral-200",
     "images": [

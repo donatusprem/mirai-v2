@@ -160,7 +160,10 @@ export default function ShopClient({ initialProducts }: { initialProducts: Produ
                                     key={item.id}
                                     product={item}
                                     index={idx}
-                                    onClick={(p) => setSelectedProduct(p)}
+                                    onClick={(p) => {
+                                        console.log("ShopClient: Setting selected product:", p.name);
+                                        setSelectedProduct(p);
+                                    }}
                                 />
                             ))}
                         </div>

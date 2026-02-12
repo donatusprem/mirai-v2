@@ -50,9 +50,11 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
         onClose();
     };
 
+    console.log("ProductModal render. Product:", product?.name, "IsOpen:", isOpen);
+
     return (
         <AnimatePresence>
-            {isOpen && (
+            {isOpen && product && (
                 <>
                     {/* Backdrop */}
                     <motion.div
@@ -60,26 +62,25 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={onClose}
-                        className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm"
+                        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9999]"
                     />
 
-                    {/* Modal */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                        exit={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
-                        transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                        className="fixed left-1/2 top-1/2 z-50 w-full max-w-4xl -translate-x-1/2 -translate-y-1/2 p-4 md:p-6"
-                    >
-                        <div className="relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+
+                    {/* Modal Container */}
+                    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 pointer-events-none">
+                        <motion.div
+                            initial={{ scale: 0.95, opacity: 0, y: 20 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.95, opacity: 0, y: 20 }}
+                            className="bg-white w-full max-w-6xl max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row pointer-events-auto relative"
+                        >
                             <button
                                 onClick={onClose}
-                                className="absolute right-4 top-4 z-10 rounded-full bg-white/80 p-2 backdrop-blur-sm transition-colors hover:bg-neutral-100"
+                                className="absolute top-4 right-4 z-10 p-2 bg-black/5 rounded-full md:hidden"
                             >
                                 <X size={20} />
                             </button>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2">
+                            <div className="grid grid-cols-1 md:grid-cols-2 w-full h-full overflow-y-auto md:overflow-hidden">
                                 {/* Image Section */}
                                 <div className={`relative h-64 md:h-auto ${product.color || "bg-neutral-100"} p-8 flex flex-col items-center justify-center gap-4`}>
                                     {/* Main Image */}
@@ -135,7 +136,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                                     <div className="flex gap-4">
                                         <button
                                             onClick={handleAddToQuote}
-                                            className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-olive text-white font-bold uppercase tracking-wide rounded-lg hover:bg-olive/90 transition-colors"
+                                            className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-neutral-900 text-white font-bold uppercase tracking-wide rounded-2xl shadow-lg hover:bg-black hover:scale-[1.02] transition-all border border-white/10"
                                         >
                                             <Plus size={18} />
                                             Add to Quote
@@ -143,8 +144,8 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
+                    </div>
                 </>
             )}
         </AnimatePresence>

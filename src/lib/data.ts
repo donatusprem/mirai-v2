@@ -67,6 +67,7 @@ export async function saveProduct(product: Product) {
     await fs.writeFile(PRODUCT_DATA_FILE, JSON.stringify(products, null, 2));
     revalidatePath('/collections');
     revalidatePath('/admin');
+    revalidatePath('/');
     return product;
 }
 
@@ -75,7 +76,9 @@ export async function deleteProduct(id: number) {
     const newProducts = products.filter(p => p.id !== id);
     await fs.writeFile(PRODUCT_DATA_FILE, JSON.stringify(newProducts, null, 2));
     revalidatePath('/collections');
+    revalidatePath('/collections');
     revalidatePath('/admin');
+    revalidatePath('/');
 }
 
 // --- IMAGES ---

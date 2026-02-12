@@ -14,6 +14,7 @@ const config: Config = {
             colors: {
                 background: "var(--background)",
                 foreground: "var(--foreground)",
+                olive: "#5a6c42", // Muted olive green
             },
         },
     },

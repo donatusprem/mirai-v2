@@ -1,6 +1,7 @@
 import { getProducts, getInventory } from "@/lib/data";
 import Link from "next/link";
 import ProductForm from "./product-form";
+import ProductList from "@/components/admin/ProductList";
 import { removeProduct } from "./product-actions";
 import AdminSidebar from "@/components/admin/admin-sidebar";
 import { Package, TrendingUp, Layers } from "lucide-react";
@@ -31,10 +32,10 @@ export default async function AdminPage({
     }, 0);
 
     return (
-        <div className="min-h-screen bg-neutral-50 flex">
+        <div className="h-screen bg-neutral-50 flex overflow-hidden">
             <AdminSidebar />
 
-            <main className="flex-1 overflow-auto">
+            <main className="flex-1 overflow-y-auto">
                 {/* Header */}
                 <header className="bg-white border-b border-neutral-200 sticky top-0 z-10">
                     <div className="px-8 h-16 flex items-center justify-between">
@@ -93,61 +94,15 @@ export default async function AdminPage({
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {/* Product List */}
-                        <div className="lg:col-span-2 space-y-3">
-                            <div className="flex items-center justify-between mb-4">
-                                <h2 className="font-bold text-lg">All Products</h2>
-                                <span className="text-sm text-neutral-400">{products.length} items</span>
-                            </div>
-
-                            {products.length === 0 ? (
-                                <div className="text-center py-20 bg-white rounded-xl border border-dashed border-neutral-300">
-                                    <Package size={48} className="mx-auto text-neutral-300 mb-4" />
-                                    <p className="text-neutral-400">No products found.</p>
-                                    <Link href="/admin?add=true" className="text-blue-500 text-sm mt-2 inline-block hover:underline">
-                                        Add your first product
-                                    </Link>
-                                </div>
-                            ) : (
-                                <div className="space-y-2 max-h-[600px] overflow-y-auto pr-2">
-                                    {products.map((product) => (
-                                        <div key={product.id} className={`group bg-white p-4 rounded-xl border transition-all flex items-center gap-4 ${editingId === product.id ? 'border-black shadow-lg' : 'border-neutral-200 hover:border-neutral-300'}`}>
-                                            <div className={`w-14 h-14 rounded-lg ${product.color || 'bg-neutral-100'} overflow-hidden relative flex-shrink-0`}>
-                                                {product.image && (
-                                                    <img src={product.image} alt={product.name} className="w-full h-full object-contain p-1" />
-                                                )}
-                                            </div>
-
-                                            <div className="flex-grow min-w-0">
-                                                <h3 className="font-semibold truncate">{product.name}</h3>
-                                                <p className="text-xs text-neutral-400">{product.category} — ₹{product.price.toLocaleString()}</p>
-                                            </div>
-
-                                            <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                <Link
-                                                    href={`/admin?edit=${product.id}`}
-                                                    className="px-3 py-1.5 text-xs font-medium bg-neutral-100 hover:bg-neutral-200 rounded-lg transition-colors"
-                                                >
-                                                    Edit
-                                                </Link>
-                                                <form action={removeProduct.bind(null, product.id)}>
-                                                    <button
-                                                        className="px-3 py-1.5 text-xs font-medium text-red-500 bg-red-50 hover:bg-red-100 rounded-lg transition-colors"
-                                                    >
-                                                        Delete
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
+                        <div className="lg:col-span-2 space-y-3 h-full">
+                            <ProductList products={products} editingId={editingId} />
                         </div>
 
                         {/* Editor Panel */}
                         <div className="relative">
-                            <div className="sticky top-24">
+                            <div className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pr-2 custom-scrollbar">
                                 {(isAdding || editingId) ? (
-                                    <ProductForm product={productToEdit} initialStock={currentStock} />
+                                    <ProductForm key={productToEdit?.id || 'new'} product={productToEdit} initialStock={currentStock} />
                                 ) : (
                                     <div className="p-8 bg-white rounded-xl border border-dashed border-neutral-300 text-center">
                                         <Package size={32} className="mx-auto text-neutral-300 mb-3" />
