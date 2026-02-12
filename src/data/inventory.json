@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "productId": 202,
+    "productName": "1 Seater Sofa Cgb",
+    "quantity": 11,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T10:58:38.743Z"
+  },
+  {
+    "id": 2,
+    "productId": 201,
+    "productName": "Birla",
+    "quantity": 7,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T11:04:25.642Z"
+  },
+  {
+    "id": 3,
+    "productId": 203,
+    "productName": "1 Seater Sofa Ma'",
+    "quantity": 7,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T11:08:18.428Z"
+  },
+  {
+    "id": 4,
+    "productId": 384,
+    "productName": "FLOOR RUG BIG 1",
+    "quantity": 10,
+    "minStock": 5,
+    "lastUpdated": "2026-02-03T14:28:45.471Z"
+  },
+  {
+    "id": 5,
+    "productId": 204,
+    "productName": "1 Seater Sofa Sch",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T11:14:31.800Z"
+  },
+  {
+    "id": 6,
+    "productId": 205,
+    "productName": "Sch2",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T11:16:17.631Z"
+  },
+  {
+    "id": 7,
+    "productId": 206,
+    "productName": "1 Seater Sofa Zx",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T11:18:34.790Z"
+  },
+  {
+    "id": 8,
+    "productId": 207,
+    "productName": "91 Spring Board  Chennai  Sofa",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T11:36:11.484Z"
+  },
+  {
+    "id": 9,
+    "productId": 208,
+    "productName": "Arsh",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T11:34:34.923Z"
+  },
+  {
+    "id": 10,
+    "productId": 209,
+    "productName": "Birla",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T11:37:54.359Z"
+  },
+  {
+    "id": 11,
+    "productId": 210,
+    "productName": "Cddf",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T11:51:23.167Z"
+  },
+  {
+    "id": 12,
+    "productId": 211,
+    "productName": "2 Seater Sofa Cf",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T11:51:58.625Z"
+  },
+  {
+    "id": 13,
+    "productId": 212,
+    "productName": "2 Seater Sofa Cgb",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T12:11:49.453Z"
+  },
+  {
+    "id": 14,
+    "productId": 213,
+    "productName": "Cgb1",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T12:16:21.335Z"
+  },
+  {
+    "id": 15,
+    "productId": 214,
+    "productName": "2 Seater Sofa Co3",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T12:18:56.836Z"
+  },
+  {
+    "id": 16,
+    "productId": 217,
+    "productName": "2 Seater Sofa Sb1",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T12:41:51.347Z"
+  },
+  {
+    "id": 17,
+    "productId": 218,
+    "productName": "2 Seater Sofa Sb2",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T12:57:58.290Z"
+  },
+  {
+    "id": 18,
+    "productId": 219,
+    "productName": "2 Seater Sofa Sch",
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2026-02-11T12:59:34.404Z"
+  }
+]
