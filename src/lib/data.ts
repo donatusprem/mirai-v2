@@ -1,12 +1,10 @@
-"use server";
+'use server';
 
-import fs from 'fs/promises';
-import path from 'path';
 import { revalidatePath } from 'next/cache';
+import { sql } from '@/lib/db';
+import { uploadToBlob } from '@/lib/storage';
 
-const PRODUCT_DATA_FILE = path.join(process.cwd(), 'src/data/products.json');
-const COLLECTION_DATA_FILE = path.join(process.cwd(), 'src/data/collections.json');
-const UPLOAD_DIR = path.join(process.cwd(), 'public/uploads');
+// --- PRODUCTS ---
 
 export interface Product {
     id: number;
@@ -15,33 +13,19 @@ export interface Product {
     color?: string;
     image?: string; // URL or path (Primary)
     images?: string[]; // Gallery
-
     price: number;
     description?: string;
+    subcategory?: string; // Added to match schema
 }
-
-export interface CollectionItem {
-    id: number;
-    name: string;
-    category: string; // The subtitle shown on card
-    image: string;
-}
-
-// Ensure upload directory exists
-async function ensureUploadDir() {
-    try {
-        await fs.access(UPLOAD_DIR);
-    } catch {
-        await fs.mkdir(UPLOAD_DIR, { recursive: true });
-    }
-}
-
-// --- PRODUCTS ---
 
 export async function getProducts(): Promise<Product[]> {
     try {
-        const data = await fs.readFile(PRODUCT_DATA_FILE, 'utf-8');
-        return JSON.parse(data);
+        const { rows } = await sql`
+            SELECT id, name, category, subcategory, color, image, images, price, description 
+            FROM products 
+            ORDER BY id DESC
+        `;
+        return rows as Product[];
     } catch (error) {
         console.error("Error reading products:", error);
         return [];
@@ -49,37 +33,53 @@ export async function getProducts(): Promise<Product[]> {
 }
 
 export async function saveProduct(product: Product) {
-    const products = await getProducts();
-    const index = products.findIndex(p => p.id === product.id);
-
-    if (index >= 0) {
-        // Update existing
-        products[index] = { ...products[index], ...product };
-    } else {
-        // Create new
-        if (!product.id) {
-            const maxId = products.reduce((max, p) => (p.id > max ? p.id : max), 100);
-            product.id = maxId + 1;
+    try {
+        if (product.id && product.id > 0) {
+            // Update existing
+            await sql`
+                UPDATE products 
+                SET name = ${product.name}, 
+                    category = ${product.category}, 
+                    subcategory = ${product.subcategory || ''},
+                    color = ${product.color || 'bg-neutral-200'}, 
+                    image = ${product.image || ''}, 
+                    images = ${product.images || []}, 
+                    price = ${product.price}, 
+                    description = ${product.description || ''}
+                WHERE id = ${product.id}
+            `;
+        } else {
+            // Create new
+            const { rows } = await sql`
+                INSERT INTO products (name, category, subcategory, color, image, images, price, description)
+                VALUES (${product.name}, ${product.category}, ${product.subcategory || ''}, ${product.color || 'bg-neutral-200'}, ${product.image || ''}, ${product.images || []}, ${product.price}, ${product.description || ''})
+                RETURNING id
+            `;
+            product.id = rows[0].id;
         }
-        products.push(product);
-    }
 
-    await fs.writeFile(PRODUCT_DATA_FILE, JSON.stringify(products, null, 2));
-    revalidatePath('/collections');
-    revalidatePath('/admin');
-    revalidatePath('/');
-    return product;
+        revalidatePath('/collections');
+        revalidatePath('/admin');
+        revalidatePath('/');
+        return product;
+    } catch (error) {
+        console.error("Error saving product:", error);
+        throw error;
+    }
 }
 
 export async function deleteProduct(id: number) {
-    const products = await getProducts();
-    const newProducts = products.filter(p => p.id !== id);
-    await fs.writeFile(PRODUCT_DATA_FILE, JSON.stringify(newProducts, null, 2));
-    revalidatePath('/collections');
-    revalidatePath('/collections');
-    revalidatePath('/admin');
-    revalidatePath('/');
+    try {
+        await sql`DELETE FROM products WHERE id = ${id}`;
+        revalidatePath('/collections');
+        revalidatePath('/admin');
+        revalidatePath('/');
+    } catch (error) {
+        console.error("Error deleting product:", error);
+        throw error;
+    }
 }
+
 
 // --- IMAGES ---
 
@@ -87,19 +87,7 @@ export async function uploadFileObject(file: File): Promise<string> {
     if (!file) {
         throw new Error('No file uploaded');
     }
-
-    await ensureUploadDir();
-
-    const buffer = Buffer.from(await file.arrayBuffer());
-    // Sanitize filename to prevent directory traversal or weird characters
-    // Add randomness to handle duplicates
-    const safeName = file.name.replace(/[^a-zA-Z0-9.-]/g, '_');
-    const uniqueName = `${Date.now()}-${Math.floor(Math.random() * 1000)}-${safeName}`;
-    const filePath = path.join(UPLOAD_DIR, uniqueName);
-
-    await fs.writeFile(filePath, buffer);
-
-    return `/uploads/${uniqueName}`;
+    return await uploadToBlob(file);
 }
 
 export async function uploadImage(formData: FormData): Promise<string> {
@@ -109,55 +97,62 @@ export async function uploadImage(formData: FormData): Promise<string> {
 
 // --- GALLERY ---
 
-const GALLERY_DATA_FILE = path.join(process.cwd(), 'src/data/gallery.json');
-
 export interface GalleryItem {
     id: number;
     title: string;
     description: string;
     image: string;
-    size?: string; // e.g. "col-span-1", "col-span-2"
+    size?: string;
 }
 
 export async function getGalleryItems(): Promise<GalleryItem[]> {
     try {
-        const data = await fs.readFile(GALLERY_DATA_FILE, 'utf-8');
-        return JSON.parse(data);
-    } catch {
+        const { rows } = await sql`SELECT * FROM gallery ORDER BY id DESC`;
+        return rows as GalleryItem[];
+    } catch (error) {
+        console.error("Error reading gallery:", error);
         return [];
     }
 }
 
 export async function saveGalleryItem(item: GalleryItem) {
-    const items = await getGalleryItems();
-    const index = items.findIndex(i => i.id === item.id);
-
-    if (index >= 0) {
-        items[index] = { ...items[index], ...item };
-    } else {
-        if (!item.id) {
-            const maxId = items.reduce((max, i) => (i.id > max ? i.id : max), 0);
-            item.id = maxId + 1;
+    try {
+        if (item.id && item.id > 0) {
+            await sql`
+                UPDATE gallery 
+                SET title = ${item.title}, 
+                    description = ${item.description}, 
+                    image = ${item.image}, 
+                    size = ${item.size || ''}
+                WHERE id = ${item.id}
+            `;
+        } else {
+            await sql`
+                INSERT INTO gallery (title, description, image, size)
+                VALUES (${item.title}, ${item.description}, ${item.image}, ${item.size || ''})
+            `;
         }
-        items.push(item);
+        revalidatePath('/gallery');
+        revalidatePath('/admin/gallery');
+    } catch (error) {
+        console.error("Error saving gallery item:", error);
+        throw error;
     }
-
-    await fs.writeFile(GALLERY_DATA_FILE, JSON.stringify(items, null, 2));
-    revalidatePath('/gallery');
-    revalidatePath('/admin/gallery');
 }
 
 export async function deleteGalleryItem(id: number) {
-    const items = await getGalleryItems();
-    const newItems = items.filter(i => i.id !== id);
-    await fs.writeFile(GALLERY_DATA_FILE, JSON.stringify(newItems, null, 2));
-    revalidatePath('/gallery');
-    revalidatePath('/admin/gallery');
+    try {
+        await sql`DELETE FROM gallery WHERE id = ${id}`;
+        revalidatePath('/gallery');
+        revalidatePath('/admin/gallery');
+    } catch (error) {
+        console.error("Error deleting gallery item:", error);
+        throw error;
+    }
 }
 
-// --- INVENTORY ---
 
-const INVENTORY_DATA_FILE = path.join(process.cwd(), 'src/data/inventory.json');
+// --- INVENTORY ---
 
 export interface InventoryItem {
     id: number;
@@ -170,37 +165,57 @@ export interface InventoryItem {
 
 export async function getInventory(): Promise<InventoryItem[]> {
     try {
-        const data = await fs.readFile(INVENTORY_DATA_FILE, 'utf-8');
-        return JSON.parse(data);
-    } catch {
+        const { rows } = await sql`
+            SELECT i.id, i.product_id as "productId", p.name as "productName", i.quantity, i.min_stock as "minStock", i.last_updated as "lastUpdated"
+            FROM inventory i
+            LEFT JOIN products p ON i.product_id = p.id
+            ORDER BY i.id ASC
+        `;
+        // Convert dates to string for serialization safety
+        return rows.map(r => ({
+            ...r,
+            lastUpdated: new Date(r.lastUpdated).toISOString()
+        })) as InventoryItem[];
+
+    } catch (error) {
+        console.error("Error reading inventory:", error);
         return [];
     }
 }
 
+
 export async function saveInventoryItem(item: InventoryItem) {
-    const items = await getInventory();
-    const index = items.findIndex(i => i.id === item.id);
+    try {
+        const lastUpdated = new Date().toISOString();
 
-    item.lastUpdated = new Date().toISOString();
-
-    if (index >= 0) {
-        items[index] = { ...items[index], ...item };
-    } else {
-        if (!item.id) {
-            const maxId = items.reduce((max, i) => (i.id > max ? i.id : max), 0);
-            item.id = maxId + 1;
+        if (item.id && item.id > 0) {
+            await sql`
+                UPDATE inventory 
+                SET product_id = ${item.productId}, 
+                    quantity = ${item.quantity}, 
+                    min_stock = ${item.minStock}, 
+                    last_updated = ${lastUpdated}
+                WHERE id = ${item.id}
+            `;
+        } else {
+            await sql`
+                INSERT INTO inventory (product_id, quantity, min_stock, last_updated)
+                VALUES (${item.productId}, ${item.quantity}, ${item.minStock}, ${lastUpdated})
+             `;
         }
-        items.push(item);
+        revalidatePath('/admin/inventory');
+    } catch (error) {
+        console.error("Error saving inventory:", error);
+        throw error;
     }
-
-    await fs.writeFile(INVENTORY_DATA_FILE, JSON.stringify(items, null, 2));
-    revalidatePath('/admin/inventory');
 }
 
 export async function deleteInventoryItem(id: number) {
-    const items = await getInventory();
-    const newItems = items.filter(i => i.id !== id);
-    await fs.writeFile(INVENTORY_DATA_FILE, JSON.stringify(newItems, null, 2));
-    revalidatePath('/admin/inventory');
+    try {
+        await sql`DELETE FROM inventory WHERE id = ${id}`;
+        revalidatePath('/admin/inventory');
+    } catch (error) {
+        console.error("Error deleting inventory:", error);
+        throw error;
+    }
 }
-

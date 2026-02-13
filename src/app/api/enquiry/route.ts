@@ -1,40 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
-
-const ENQUIRIES_FILE = path.join(process.cwd(), "src/data/enquiries.json");
-
-export interface EnquiryItem {
-    id: number | string;
-    name: string;
-    category: string;
-    quantity: number;
-}
-
-export interface Enquiry {
-    id: number;
-    name: string;
-    email: string;
-    phone?: string;
-    company?: string;
-    message?: string;
-    items: EnquiryItem[];
-    status: "new" | "contacted" | "completed";
-    createdAt: string;
-}
-
-async function getEnquiries(): Promise<Enquiry[]> {
-    try {
-        const data = await fs.readFile(ENQUIRIES_FILE, "utf-8");
-        return JSON.parse(data);
-    } catch {
-        return [];
-    }
-}
-
-async function saveEnquiries(enquiries: Enquiry[]): Promise<void> {
-    await fs.writeFile(ENQUIRIES_FILE, JSON.stringify(enquiries, null, 2));
-}
+import { sql } from '@/lib/db';
 
 export async function POST(request: NextRequest) {
     try {
@@ -48,27 +13,13 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        const enquiries = await getEnquiries();
-        const newId = enquiries.length > 0
-            ? Math.max(...enquiries.map(e => e.id)) + 1
-            : 1;
+        const { rows } = await sql`
+            INSERT INTO enquiries (name, email, phone, company, message, items, status, created_at)
+            VALUES (${name}, ${email}, ${phone || null}, ${company || null}, ${message || null}, ${JSON.stringify(items || [])}::jsonb, 'new', NOW())
+            RETURNING id
+        `;
 
-        const newEnquiry: Enquiry = {
-            id: newId,
-            name,
-            email,
-            phone: phone || undefined,
-            company: company || undefined,
-            message: message || undefined,
-            items: items || [],
-            status: "new",
-            createdAt: new Date().toISOString(),
-        };
-
-        enquiries.unshift(newEnquiry);
-        await saveEnquiries(enquiries);
-
-        return NextResponse.json({ success: true, id: newId });
+        return NextResponse.json({ success: true, id: rows[0].id });
     } catch (error) {
         console.error("Failed to save enquiry:", error);
         return NextResponse.json(
@@ -80,7 +31,20 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
     try {
-        const enquiries = await getEnquiries();
+        const { rows } = await sql`SELECT * FROM enquiries ORDER BY id DESC`;
+
+        const enquiries = rows.map(r => ({
+            id: r.id,
+            name: r.name,
+            email: r.email,
+            phone: r.phone,
+            company: r.company,
+            message: r.message,
+            items: r.items,
+            status: r.status,
+            createdAt: r.created_at
+        }));
+
         return NextResponse.json(enquiries);
     } catch (error) {
         console.error("Failed to fetch enquiries:", error);
