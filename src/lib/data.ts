@@ -23,7 +23,7 @@ export async function getProducts(): Promise<Product[]> {
         const { rows } = await sql`
             SELECT id, name, category, subcategory, color, image, images, price, description 
             FROM products 
-            ORDER BY id DESC
+            ORDER BY id ASC
         `;
         return rows as Product[];
     } catch (error) {
@@ -36,6 +36,7 @@ export async function saveProduct(product: Product) {
     try {
         if (product.id && product.id > 0) {
             // Update existing
+            // Ensure images array is formatted correctly for Postgres text[]
             await sql`
                 UPDATE products 
                 SET name = ${product.name}, 
@@ -43,7 +44,7 @@ export async function saveProduct(product: Product) {
                     subcategory = ${product.subcategory || ''},
                     color = ${product.color || 'bg-neutral-200'}, 
                     image = ${product.image || ''}, 
-                    images = ${product.images || []}, 
+                    images = ${product.images as any}::text[], 
                     price = ${product.price}, 
                     description = ${product.description || ''}
                 WHERE id = ${product.id}
@@ -52,7 +53,7 @@ export async function saveProduct(product: Product) {
             // Create new
             const { rows } = await sql`
                 INSERT INTO products (name, category, subcategory, color, image, images, price, description)
-                VALUES (${product.name}, ${product.category}, ${product.subcategory || ''}, ${product.color || 'bg-neutral-200'}, ${product.image || ''}, ${product.images || []}, ${product.price}, ${product.description || ''})
+                VALUES (${product.name}, ${product.category}, ${product.subcategory || ''}, ${product.color || 'bg-neutral-200'}, ${product.image || ''}, ${product.images as any}::text[], ${product.price}, ${product.description || ''})
                 RETURNING id
             `;
             product.id = rows[0].id;
