@@ -204,13 +204,22 @@ export default function ProductList({ products, editingId }: ProductListProps) {
                         </button>
 
                         {isReordering ? (
-                            <button
-                                onClick={handleSaveOrder}
-                                className="flex-1 bg-black text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-neutral-800 transition-all shadow-md flex items-center justify-center gap-2"
-                            >
-                                <Save size={16} />
-                                Save Order
-                            </button>
+                            <>
+                                <button
+                                    onClick={() => setOrderedProducts([...orderedProducts].reverse())}
+                                    className="px-3 py-2 text-sm font-bold border border-neutral-200 rounded-lg hover:bg-neutral-50 flex items-center gap-2 text-neutral-600 transition-all"
+                                    title="Reverse List Order"
+                                >
+                                    <ArrowUpDown size={16} />
+                                </button>
+                                <button
+                                    onClick={handleSaveOrder}
+                                    className="flex-1 bg-black text-white px-4 py-2 rounded-lg text-sm font-bold hover:bg-neutral-800 transition-all shadow-md flex items-center justify-center gap-2"
+                                >
+                                    <Save size={16} />
+                                    Save Order
+                                </button>
+                            </>
                         ) : (
                             <>
                                 <div className="relative flex-1">
