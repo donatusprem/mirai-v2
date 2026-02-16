@@ -1,0 +1,27 @@
+[dotenv@17.3.1] injecting env (18) from .env.development.local -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+Connecting to DB...
+Found 5 products.
+
+Product: FLOOR RUG BIG 1 (ID: 384)
+  - URL: https://hsfqqxteqnxxbyfe.public.blob.vercel-storage.com/05.jpg
+    Size: 2778.97 KB
+    Type: image/jpeg
+  - URL: https://hsfqqxteqnxxbyfe.public.blob.vercel-storage.com/05.jpg
+    Size: 2778.97 KB
+    Type: image/jpeg
+
+Product: Picture2 Upscaled (ID: 383)
+  - URL: /uploads/picture2-upscaled.webp (Error fetching headers: Failed to parse URL from /uploads/picture2-upscaled.webp)
+  - URL: /uploads/picture2-upscaled.webp (Error fetching headers: Failed to parse URL from /uploads/picture2-upscaled.webp)
+
+Product: Mayon (ID: 382)
+  - URL: /uploads/mayon.webp (Error fetching headers: Failed to parse URL from /uploads/mayon.webp)
+  - URL: /uploads/mayon.webp (Error fetching headers: Failed to parse URL from /uploads/mayon.webp)
+
+Product: Furniture Gfg (ID: 381)
+  - URL: /uploads/gfg.webp (Error fetching headers: Failed to parse URL from /uploads/gfg.webp)
+  - URL: /uploads/gfg.webp (Error fetching headers: Failed to parse URL from /uploads/gfg.webp)
+
+Product: Gemini Generated Image 79h9uo79h9uo79h9 (1) (ID: 380)
+  - URL: /uploads/gemini-generated-image-79h9uo79h9uo79h9-1.webp (Error fetching headers: Failed to parse URL from /uploads/gemini-generated-image-79h9uo79h9uo79h9-1.webp)
+  - URL: /uploads/gemini-generated-image-79h9uo79h9uo79h9-1.webp (Error fetching headers: Failed to parse URL from /uploads/gemini-generated-image-79h9uo79h9uo79h9-1.webp)

@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer";
 import { CartProvider } from "@/context/CartContext";
 import CartPanel from "@/components/ui/CartPanel";
 import SmoothScroll from "@/components/ui/SmoothScroll";
+import { ToastProvider } from "@/components/ui/Toast";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -35,12 +36,14 @@ export default function RootLayout({
         )}
       >
         <CartProvider>
-          <SmoothScroll />
-          <MouseFollower />
-          <Header />
-          {children}
-          <Footer />
-          <CartPanel />
+          <ToastProvider>
+            <SmoothScroll />
+            <MouseFollower />
+            <Header />
+            {children}
+            <Footer />
+            <CartPanel />
+          </ToastProvider>
         </CartProvider>
       </body>
     </html>

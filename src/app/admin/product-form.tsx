@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { createOrUpdateProduct } from './product-actions';
 import { Product } from '@/lib/data';
+import { useToast } from '@/components/ui/Toast';
 
 import { CATEGORIES } from "@/lib/constants";
 
@@ -32,6 +33,7 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
     const [useUrl, setUseUrl] = useState(!product?.image?.startsWith('/uploads'));
     const [isUploading, setIsUploading] = useState(false);
     const router = useRouter();
+    const { showToast } = useToast();
 
     // Cleanup object URLs to avoid memory leaks
     useEffect(() => {
@@ -105,21 +107,22 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
             formData.set('existingImages', JSON.stringify(existingUrls));
 
             // 5. Handle fallback logic for the 'imageUrl' input if user typed but didn't click add
-            // We can leave it as is, or ignore it. The original code grabbed it.
-            // But we have `handleUrlAdd` now. 
-            // If the user typed in the box but didn't "Add", it might be missed.
-            // The original form sent `imageUrl` name. Let's keep it but prioritized our state.
-
             const result = await createOrUpdateProduct(formData);
 
             if (result?.error) {
-                alert(result.error);
+                showToast(result.error, 'error');
                 setIsUploading(false);
+            } else if (result?.success) {
+                showToast("Changes Saved", 'success');
+                // Wait a bit for toast to be seen before redirecting
+                setTimeout(() => {
+                    router.push('/admin');
+                    router.refresh();
+                }, 1000);
             }
-            // Success redirect is handled in server action
         } catch (error) {
             console.error("Form submission error", error);
-            alert("An error occurred. Please try again.");
+            showToast("An error occurred. Please try again.", 'error');
             setIsUploading(false);
         }
     }
@@ -132,8 +135,6 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
 
             <form action={handleSubmit} className="space-y-4">
                 {product?.id && <input type="hidden" name="id" value={product.id} />}
-
-                {/* We handle existingImages manually in handleSubmit, but keeping a hidden input if needed for fallback? No, manual is better. */}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="md:col-span-2">
