@@ -16,19 +16,36 @@ export interface Product {
     price: number;
     description?: string;
     subcategory?: string; // Added to match schema
+    position?: number;
 }
 
 export async function getProducts(): Promise<Product[]> {
     try {
         const { rows } = await sql`
-            SELECT id, name, category, subcategory, color, image, images, price, description 
+            SELECT id, name, category, subcategory, color, image, images, price, description, position
             FROM products 
-            ORDER BY id ASC
+            ORDER BY position ASC, id DESC
         `;
         return rows as Product[];
     } catch (error) {
         console.error("Error reading products:", error);
         return [];
+    }
+}
+
+export async function updateProductOrder(items: { id: number, position: number }[]) {
+    try {
+        for (const item of items) {
+            await sql`
+                UPDATE products 
+                SET position = ${item.position}
+                WHERE id = ${item.id}
+            `;
+        }
+        return { success: true };
+    } catch (error) {
+        console.error("Error updating product order:", error);
+        return { success: false, error };
     }
 }
 

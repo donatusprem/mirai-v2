@@ -1,8 +1,20 @@
 'use server';
 
-import { saveProduct, deleteProduct, uploadFileObject, Product, getInventory, saveInventoryItem, InventoryItem } from '@/lib/data';
+import { saveProduct, deleteProduct, uploadFileObject, Product, getInventory, saveInventoryItem, InventoryItem, updateProductOrder } from '@/lib/data';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+
+export async function updateOrder(items: { id: number, position: number }[]) {
+    try {
+        await updateProductOrder(items);
+        revalidatePath('/admin');
+        revalidatePath('/'); // Update home page as well
+        return { success: true };
+    } catch (error) {
+        console.error("Failed to update order:", error);
+        return { error: 'Failed to update order' };
+    }
+}
 
 export async function createOrUpdateProduct(formData: FormData) {
     try {

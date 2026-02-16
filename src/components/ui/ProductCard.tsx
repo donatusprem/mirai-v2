@@ -72,6 +72,8 @@ export default function ProductCard({ product, index = 0, onClick }: ProductCard
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             className={`object-cover transition-opacity duration-700 ease-in-out ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                             onLoad={() => setImageLoaded(true)}
+                            quality={100}
+                            unoptimized={true}
                         />
 
                         {/* Secondary Image (Hover) */}
@@ -82,6 +84,8 @@ export default function ProductCard({ product, index = 0, onClick }: ProductCard
                                 fill
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
+                                quality={100}
+                                unoptimized={true}
                             />
                         )}
 
