@@ -69,7 +69,7 @@ export default function ProductCard({ product, index = 0, onClick }: ProductCard
                             src={product.images?.[0] || product.image || ""}
                             alt={product.name}
                             fill
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            sizes="100vw"
                             className={`object-cover transition-opacity duration-700 ease-in-out ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                             onLoad={() => setImageLoaded(true)}
                             quality={100}
@@ -82,7 +82,7 @@ export default function ProductCard({ product, index = 0, onClick }: ProductCard
                                 src={product.images[1]}
                                 alt={`${product.name} - View 2`}
                                 fill
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                sizes="100vw"
                                 className="object-cover absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out"
                                 quality={100}
                             />
