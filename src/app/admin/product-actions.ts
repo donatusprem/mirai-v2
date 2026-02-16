@@ -30,8 +30,10 @@ export async function createOrUpdateProduct(formData: FormData) {
                     try {
                         const url = await uploadFileObject(file);
                         return { status: 'fulfilled' as const, url, name: file.name };
-                    } catch (e) {
-                        return { status: 'rejected' as const, reason: e, name: file.name };
+                    } catch (e: any) {
+                        const errorMessage = e.message || 'Unknown upload error';
+                        console.error(`[Wrapper] Upload failed for ${file.name}:`, errorMessage);
+                        return { status: 'rejected' as const, reason: errorMessage, name: file.name };
                     }
                 });
 
