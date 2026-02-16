@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { createOrUpdateProduct } from './product-actions';
 import { Product } from '@/lib/data';
@@ -13,22 +13,65 @@ interface Props {
     onCancel?: () => void;
 }
 
+type ImageItem =
+    | { type: 'url', value: string }
+    | { type: 'file', file: File, preview: string };
+
 export default function ProductForm({ product, initialStock = 0, onCancel }: Props) {
-    const [previews, setPreviews] = useState<string[]>(product?.images || (product?.image ? [product.image] : []));
+    // Initialize images state
+    const [images, setImages] = useState<ImageItem[]>(() => {
+        const initial: ImageItem[] = [];
+        if (product?.images && product.images.length > 0) {
+            product.images.forEach(img => initial.push({ type: 'url', value: img }));
+        } else if (product?.image) {
+            initial.push({ type: 'url', value: product.image });
+        }
+        return initial;
+    });
+
     const [useUrl, setUseUrl] = useState(!product?.image?.startsWith('/uploads'));
     const [isUploading, setIsUploading] = useState(false);
     const router = useRouter();
 
+    // Cleanup object URLs to avoid memory leaks
+    useEffect(() => {
+        return () => {
+            images.forEach(img => {
+                if (img.type === 'file') {
+                    URL.revokeObjectURL(img.preview);
+                }
+            });
+        };
+    }, []);
+
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const files = e.target.files;
         if (files && files.length > 0) {
-            const newPreviews = Array.from(files).map(file => URL.createObjectURL(file));
-            setPreviews(prev => [...prev, ...newPreviews]);
+            const newImages: ImageItem[] = Array.from(files).map(file => ({
+                type: 'file',
+                file: file,
+                preview: URL.createObjectURL(file)
+            }));
+            setImages(prev => [...prev, ...newImages]);
+        }
+        // Reset input value to allow selecting the same file again if needed
+        e.target.value = '';
+    };
+
+    const handleUrlAdd = (url: string) => {
+        if (url) {
+            setImages(prev => [...prev, { type: 'url', value: url }]);
         }
     };
 
     const handleRemoveImage = (index: number) => {
-        setPreviews(prev => prev.filter((_, i) => i !== index));
+        setImages(prev => {
+            const itemToRemove = prev[index];
+            if (itemToRemove.type === 'file') {
+                URL.revokeObjectURL(itemToRemove.preview);
+            }
+            return prev.filter((_, i) => i !== index);
+        });
     };
 
     const handleCancel = () => {
@@ -38,24 +81,46 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
 
     async function handleSubmit(formData: FormData) {
         setIsUploading(true);
-        // We need to handle the file uploads manually if we want to support multiple files easily with server actions
-        // or we rely on the input name="files" and the server action to parse getAll('files').
-        // Let's modify the server action to handle "files" or "images".
 
-        // However, for previews that are ALREADY URLs (existing images), they won't be in the file input.
-        // We need to pass them as hidden inputs or a JSON string.
+        try {
+            // 1. Separate existing URLs and New Files
+            const existingUrls = images
+                .filter(img => img.type === 'url')
+                .map(img => (img as { type: 'url', value: string }).value);
 
-        // Let's verify how we pass data.
-        // We will append existing images as text fields.
+            const newFiles = images
+                .filter(img => img.type === 'file')
+                .map(img => (img as { type: 'file', file: File }).file);
 
-        // For now, let's just make the form work with the existing action wrapper, 
-        // but we might need to modify product-actions.ts significantly.
+            // 2. Clear auto-populated 'files' from input to avoid duplicates/conflicts 
+            // (though we reset the input value, it's safer to reconstruct)
+            formData.delete('files');
 
-        const result = await createOrUpdateProduct(formData);
-        setIsUploading(false);
+            // 3. Append actual files from state
+            newFiles.forEach(file => {
+                formData.append('files', file);
+            });
 
-        if (result?.error) {
-            alert(result.error);
+            // 4. Send existing/external URLs
+            formData.set('existingImages', JSON.stringify(existingUrls));
+
+            // 5. Handle fallback logic for the 'imageUrl' input if user typed but didn't click add
+            // We can leave it as is, or ignore it. The original code grabbed it.
+            // But we have `handleUrlAdd` now. 
+            // If the user typed in the box but didn't "Add", it might be missed.
+            // The original form sent `imageUrl` name. Let's keep it but prioritized our state.
+
+            const result = await createOrUpdateProduct(formData);
+
+            if (result?.error) {
+                alert(result.error);
+                setIsUploading(false);
+            }
+            // Success redirect is handled in server action
+        } catch (error) {
+            console.error("Form submission error", error);
+            alert("An error occurred. Please try again.");
+            setIsUploading(false);
         }
     }
 
@@ -68,9 +133,7 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
             <form action={handleSubmit} className="space-y-4">
                 {product?.id && <input type="hidden" name="id" value={product.id} />}
 
-                {/* Pass existing images as a JSON string or multiple inputs */}
-                {/* We'll rely on the server action to read this. Let's call it 'existingImages' */}
-                <input type="hidden" name="existingImages" value={JSON.stringify(previews.filter(p => !p.startsWith('blob:')))} />
+                {/* We handle existingImages manually in handleSubmit, but keeping a hidden input if needed for fallback? No, manual is better. */}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="md:col-span-2">
@@ -155,26 +218,22 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
                                     if (e.key === 'Enter') {
                                         e.preventDefault();
                                         const val = e.currentTarget.value;
-                                        if (val) {
-                                            setPreviews(prev => [...prev, val]);
-                                            e.currentTarget.value = '';
-                                        }
+                                        handleUrlAdd(val);
+                                        e.currentTarget.value = '';
                                     }
                                 }}
                             />
                             <button type="button" className="text-xs uppercase font-bold px-4 py-2 bg-black text-white rounded-lg" onClick={(e) => {
                                 const input = e.currentTarget.previousElementSibling as HTMLInputElement;
-                                if (input.value) {
-                                    setPreviews(prev => [...prev, input.value]);
-                                    input.value = '';
-                                }
+                                handleUrlAdd(input.value);
+                                input.value = '';
                             }}>Add</button>
                         </div>
                     ) : (
                         <div className="relative">
                             <input
                                 type="file"
-                                name="files" // Changed from 'file' to 'files' for mulitple
+                                name="file_input" // Changed name so it doesn't conflict with manual append
                                 id="file-upload"
                                 accept="image/*"
                                 multiple
@@ -191,11 +250,15 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
                     )}
 
                     {/* Previews Grid */}
-                    {previews.length > 0 && (
+                    {images.length > 0 && (
                         <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {previews.map((src, idx) => (
+                            {images.map((item, idx) => (
                                 <div key={idx} className="relative group aspect-square rounded-lg overflow-hidden border border-neutral-200">
-                                    <img src={src} alt={`Preview ${idx}`} className="w-full h-full object-cover" />
+                                    <img
+                                        src={item.type === 'file' ? item.preview : item.value}
+                                        alt={`Preview ${idx}`}
+                                        className="w-full h-full object-cover"
+                                    />
                                     <button
                                         type="button"
                                         onClick={() => handleRemoveImage(idx)}
