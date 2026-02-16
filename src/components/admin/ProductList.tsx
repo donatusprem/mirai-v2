@@ -18,14 +18,37 @@ export default function ProductList({ products, editingId }: ProductListProps) {
     const router = useRouter();
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedCategory, setSelectedCategory] = useState<string>('All');
+    const [sortBy, setSortBy] = useState<string>('newest');
 
     const filteredProducts = useMemo(() => {
-        return products.filter(product => {
+        let result = products.filter(product => {
             const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
             const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
             return matchesSearch && matchesCategory;
         });
-    }, [products, searchQuery, selectedCategory]);
+
+        // Sorting Logic
+        result.sort((a, b) => {
+            switch (sortBy) {
+                case 'newest':
+                    return b.id - a.id;
+                case 'oldest':
+                    return a.id - b.id;
+                case 'price-low':
+                    return a.price - b.price;
+                case 'price-high':
+                    return b.price - a.price;
+                case 'name-asc':
+                    return a.name.localeCompare(b.name);
+                case 'name-desc':
+                    return b.name.localeCompare(a.name);
+                default:
+                    return 0;
+            }
+        });
+
+        return result;
+    }, [products, searchQuery, selectedCategory, sortBy]);
 
     const categories = ['All', ...CATEGORIES];
 
@@ -39,23 +62,37 @@ export default function ProductList({ products, editingId }: ProductListProps) {
 
                 {/* Search & Filter Controls */}
                 <div className="space-y-3">
-                    <div className="relative">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" size={16} />
-                        <input
-                            type="text"
-                            placeholder="Search products..."
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full pl-9 pr-4 py-2 text-sm border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all"
-                        />
-                        {searchQuery && (
-                            <button
-                                onClick={() => setSearchQuery('')}
-                                className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-black"
-                            >
-                                <X size={14} />
-                            </button>
-                        )}
+                    <div className="flex gap-2">
+                        <div className="relative flex-1">
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400" size={16} />
+                            <input
+                                type="text"
+                                placeholder="Search products..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                className="w-full pl-9 pr-4 py-2 text-sm border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all"
+                            />
+                            {searchQuery && (
+                                <button
+                                    onClick={() => setSearchQuery('')}
+                                    className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-black"
+                                >
+                                    <X size={14} />
+                                </button>
+                            )}
+                        </div>
+                        <select
+                            value={sortBy}
+                            onChange={(e) => setSortBy(e.target.value)}
+                            className="px-3 py-2 text-sm border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black bg-white"
+                        >
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name-asc">Name: A-Z</option>
+                            <option value="name-desc">Name: Z-A</option>
+                        </select>
                     </div>
 
                     <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
