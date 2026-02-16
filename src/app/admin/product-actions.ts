@@ -44,7 +44,7 @@ export async function createOrUpdateProduct(formData: FormData) {
                     images.push(result.url);
                 } else {
                     console.error(`Failed to upload ${result.name}:`, result.reason);
-                    warnings.push(`Failed to upload ${result.name}`);
+                    warnings.push(`Failed to upload ${result.name}: ${result.reason}`);
                 }
             });
         }
