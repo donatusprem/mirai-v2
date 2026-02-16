@@ -113,12 +113,18 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
                 showToast(result.error, 'error');
                 setIsUploading(false);
             } else if (result?.success) {
-                showToast("Changes Saved", 'success');
+                if (result.warnings && result.warnings.length > 0) {
+                    result.warnings.forEach(warning => showToast(warning, 'error'));
+                    showToast("Product saved with warnings", 'info');
+                } else {
+                    showToast("Changes Saved", 'success');
+                }
+
                 // Wait a bit for toast to be seen before redirecting
                 setTimeout(() => {
                     router.push('/admin');
                     router.refresh();
-                }, 1000);
+                }, 1500);
             }
         } catch (error) {
             console.error("Form submission error", error);

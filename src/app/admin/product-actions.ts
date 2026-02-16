@@ -20,20 +20,31 @@ export async function createOrUpdateProduct(formData: FormData) {
         // Handle new file uploads
         const files = formData.getAll('files') as File[];
 
+        const warnings: string[] = [];
+
         if (files && files.length > 0) {
-            // Upload each file
-            for (const file of files) {
-                if (file.size > 0) {
+            // Upload files in parallel
+            const uploadPromises = files
+                .filter(file => file.size > 0)
+                .map(async (file) => {
                     try {
                         const url = await uploadFileObject(file);
-                        images.push(url);
+                        return { status: 'fulfilled' as const, url, name: file.name };
                     } catch (e) {
-                        console.error("Upload failed for file", file.name, e);
-                        // Continue with other files? or fail? 
-                        // Let's log and continue
+                        return { status: 'rejected' as const, reason: e, name: file.name };
                     }
+                });
+
+            const results = await Promise.all(uploadPromises);
+
+            results.forEach(result => {
+                if (result.status === 'fulfilled') {
+                    images.push(result.url);
+                } else {
+                    console.error(`Failed to upload ${result.name}:`, result.reason);
+                    warnings.push(`Failed to upload ${result.name}`);
                 }
-            }
+            });
         }
 
         // Just in case single file upload fallback (if 'files' is empty but 'file' exists?)
@@ -87,16 +98,14 @@ export async function createOrUpdateProduct(formData: FormData) {
             await saveInventoryItem(inventoryItem);
         } catch (invError) {
             console.error("Inventory update failed:", invError);
-            // Don't fail the whole request if only inventory fails, or maybe we should?
-            // Proceeding for now.
         }
+
+        return { success: true, product: savedProduct, warnings: warnings.length > 0 ? warnings : undefined };
 
     } catch (error) {
         console.error("Failed to create/update product:", error);
         return { error: 'Failed to save product. Please try again.' };
     }
-
-    redirect('/admin');
 }
 
 export async function removeProduct(id: number) {
