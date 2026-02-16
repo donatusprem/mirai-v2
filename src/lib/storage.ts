@@ -5,6 +5,7 @@ export async function uploadToBlob(file: File) {
         console.log(`[Storage] Starting upload for ${file.name} (${file.size} bytes) at ${new Date().toISOString()}`);
         const blob = await put(file.name, file, {
             access: 'public',
+            addRandomSuffix: true // Prevent filename collisions
         });
         console.log(`[Storage] Upload successful for ${file.name}: ${blob.url}`);
         return blob.url;
