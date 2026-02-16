@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer";
 import { CartProvider } from "@/context/CartContext";
 import CartPanel from "@/components/ui/CartPanel";
 import SmoothScroll from "@/components/ui/SmoothScroll";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -42,6 +43,7 @@ export default function RootLayout({
           <Footer />
           <CartPanel />
         </CartProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
