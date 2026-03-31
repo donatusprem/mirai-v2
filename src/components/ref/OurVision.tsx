@@ -28,11 +28,11 @@ export default function OurVision() {
             <div className="container mx-auto px-6 relative z-10">
                 {/* Liquid Glass Card */}
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="max-w-5xl mx-auto glass-panel p-12 md:p-20 rounded-[3rem] text-center"
+                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                    className="max-w-5xl mx-auto p-12 md:p-20 text-center"
                 >
                     <h2 className="text-sm font-bold uppercase tracking-[0.3em] mb-12 text-neutral-400">Our Vision</h2>
 

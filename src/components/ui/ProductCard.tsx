@@ -12,6 +12,7 @@ interface Product {
     image?: string;
     images?: string[]; // Gallery
     color?: string;
+    showPrice?: boolean;
 }
 
 interface ProductCardProps {
@@ -114,7 +115,7 @@ export default function ProductCard({ product, index = 0, onClick }: ProductCard
                         <h3 className="font-bold uppercase text-sm tracking-wide text-black">{product.name}</h3>
                         <p className="text-xs text-black/60 mt-1">{product.category}</p>
                     </div>
-                    {product.price && (
+                    {product.showPrice && product.price !== undefined && (
                         <span className="text-sm font-medium text-olive">₹{product.price.toLocaleString('en-IN')}</span>
                     )}
                 </div>

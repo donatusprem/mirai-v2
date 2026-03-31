@@ -154,13 +154,24 @@ export default function ProductForm({ product, initialStock = 0, onCancel }: Pro
                     </div>
                     <div>
                         <label className="block text-xs font-bold uppercase tracking-widest mb-2 opacity-60">Price (₹)</label>
-                        <input
-                            type="number"
-                            name="price"
-                            defaultValue={product?.price}
-                            className="w-full px-4 py-2 bg-white border border-neutral-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition-all"
-                            required
-                        />
+                        <div className="flex gap-2">
+                            <input
+                                type="number"
+                                name="price"
+                                defaultValue={product?.price}
+                                className="w-full px-4 py-2 bg-white border border-neutral-200 rounded-none focus:outline-none focus:ring-2 focus:ring-black/10 focus:border-black transition-all"
+                                required
+                            />
+                            <label className="flex items-center gap-2 px-3 border border-neutral-200 rounded-none bg-neutral-50 cursor-pointer hover:bg-neutral-100 transition-colors shrink-0" title="Show price on product pages">
+                                <input 
+                                    type="checkbox" 
+                                    name="showPrice" 
+                                    defaultChecked={product?.showPrice}
+                                    className="w-4 h-4 cursor-pointer accent-black" 
+                                />
+                                <span className="text-xs font-bold uppercase tracking-widest">Show</span>
+                            </label>
+                        </div>
                     </div>
                     <div>
                         <label className="block text-xs font-bold uppercase tracking-widest mb-2 opacity-60">Stock</label>

@@ -24,6 +24,7 @@ export async function createOrUpdateProduct(formData: FormData) {
         const price = Number(formData.get('price'));
         const description = formData.get('description') as string;
         const stock = Number(formData.get('stock'));
+        const showPrice = formData.get('showPrice') === 'true' || formData.get('showPrice') === 'on';
 
         // Image handling
         const existingImagesJson = formData.get('existingImages') as string;
@@ -90,7 +91,8 @@ export async function createOrUpdateProduct(formData: FormData) {
             description,
             image: primaryImage, // Maintain backward compat
             images: images,
-            color: 'bg-neutral-200' // Default fallback, maybe add color picker later
+            color: 'bg-neutral-200', // Default fallback, maybe add color picker later
+            showPrice
         };
 
         const savedProduct = await saveProduct(product);

@@ -14,6 +14,7 @@ interface Product {
     images?: string[]; // Gallery
     description?: string;
     color?: string;
+    showPrice?: boolean;
 }
 
 interface ProductModalProps {
@@ -123,7 +124,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                                         {product.name}
                                     </h2>
 
-                                    {product.price && (
+                                    {product.showPrice && product.price !== undefined && (
                                         <div className="mb-6 text-2xl font-medium text-black">
                                             ₹{product.price.toLocaleString('en-IN')}
                                         </div>

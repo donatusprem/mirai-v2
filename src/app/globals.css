@@ -3,6 +3,30 @@
 @theme {
   --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
+  
+  --radius: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-full: 0px;
+  
+  --shadow: none;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --shadow-xl: none;
+  --shadow-2xl: none;
+  --shadow-inner: none;
+  
+  --drop-shadow: none;
+  --drop-shadow-sm: none;
+  --drop-shadow-md: none;
+  --drop-shadow-lg: none;
+  --drop-shadow-xl: none;
+  --drop-shadow-2xl: none;
 }
 
 :root {

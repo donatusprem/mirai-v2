@@ -17,12 +17,13 @@ export interface Product {
     description?: string;
     subcategory?: string; // Added to match schema
     position?: number;
+    showPrice?: boolean;
 }
 
 export async function getProducts(): Promise<Product[]> {
     try {
         const { rows } = await sql`
-            SELECT id, name, category, subcategory, color, image, images, price, description, position
+            SELECT id, name, category, subcategory, color, image, images, price, description, position, show_price as "showPrice"
             FROM products 
             ORDER BY position ASC, id DESC
         `;
@@ -63,14 +64,15 @@ export async function saveProduct(product: Product) {
                     image = ${product.image || ''}, 
                     images = ${product.images as any}::text[], 
                     price = ${product.price}, 
-                    description = ${product.description || ''}
+                    description = ${product.description || ''},
+                    show_price = ${product.showPrice ?? false}
                 WHERE id = ${product.id}
             `;
         } else {
             // Create new
             const { rows } = await sql`
-                INSERT INTO products (name, category, subcategory, color, image, images, price, description)
-                VALUES (${product.name}, ${product.category}, ${product.subcategory || ''}, ${product.color || 'bg-neutral-200'}, ${product.image || ''}, ${product.images as any}::text[], ${product.price}, ${product.description || ''})
+                INSERT INTO products (name, category, subcategory, color, image, images, price, description, show_price)
+                VALUES (${product.name}, ${product.category}, ${product.subcategory || ''}, ${product.color || 'bg-neutral-200'}, ${product.image || ''}, ${product.images as any}::text[], ${product.price}, ${product.description || ''}, ${product.showPrice ?? false})
                 RETURNING id
             `;
             product.id = rows[0].id;

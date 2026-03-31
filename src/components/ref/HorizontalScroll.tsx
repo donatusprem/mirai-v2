@@ -39,18 +39,18 @@ export default function HorizontalScroll() {
                         <Link
                             href={item.link}
                             key={item.id}
-                            className="group relative h-[60vh] w-[400px] rounded-[3rem] overflow-hidden bg-neutral-100 border border-neutral-200 shadow-xl transition-all duration-500 hover:shadow-2xl hover:scale-[1.01]"
+                            className="relative h-[60vh] w-[400px] overflow-hidden bg-neutral-100 border border-neutral-200 transition-all duration-500"
                         >
                             <img
                                 src={item.image}
                                 alt={item.title}
-                                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                className="w-full h-full object-cover transition-transform duration-700 ease-out"
                             />
 
                             {/* Permanent Frosted Glass Label - 'Liquid Glass' UI */}
                             {/* Using bg-white/30 and backdrop-blur-xl for a true 'frost' effect that isn't solid white */}
                             <div className="absolute bottom-8 left-0 right-0 z-20 flex justify-center pointer-events-none">
-                                <div className="backdrop-blur-xl bg-white/30 border border-white/20 shadow-lg px-8 py-4 rounded-full">
+                                <div className="backdrop-blur-xl bg-white/30 border border-white/20 px-8 py-4">
                                     <h3 className="text-sm font-bold uppercase tracking-widest text-black/80">{item.title}</h3>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@ export default function HorizontalScroll() {
 
                     {/* 'View All' Card */}
                     <div className="h-[60vh] w-[300px] flex items-center justify-center">
-                        <Link href="/collections" className="glass-button w-40 h-40 rounded-full flex items-center justify-center text-center text-sm font-bold uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all">
+                        <Link href="/collections" className="glass-button w-40 h-40 flex items-center justify-center text-center text-sm font-bold uppercase tracking-widest hover:bg-black hover:text-white hover:border-black transition-all">
                             View All
                         </Link>
                     </div>

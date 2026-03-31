@@ -98,21 +98,19 @@ export default function Hero() {
     return (
         <section ref={containerRef} className="relative min-h-[120vh] bg-white pt-32 pb-20 overflow-hidden">
 
-            <AuroraBackground />
-
-            <div className="container mx-auto px-6 lg:px-12 flex flex-col gap-24">
+            <div className="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8 min-h-[85vh]">
 
                 {/* 1. Headline & CTA */}
                 <motion.div
                     style={{ y: textY }}
-                    className="relative z-10 max-w-6xl mx-auto text-center md:text-left md:mx-0"
+                    className="relative z-10 w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left pt-10"
                 >
-                    <div className="overflow-hidden mb-8">
+                    <div className="overflow-hidden mb-6">
                         <motion.h1
                             initial={{ y: "100%" }}
                             animate={{ y: 0 }}
                             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                            className="text-6xl md:text-8xl lg:text-[9rem] leading-[0.85] font-black uppercase tracking-tighter text-neutral-900"
+                            className="text-6xl md:text-7xl lg:text-[7rem] leading-[0.9] font-black uppercase tracking-tighter text-neutral-900"
                         >
                             Office <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 to-neutral-400">Furniture</span>
                         </motion.h1>
@@ -123,7 +121,7 @@ export default function Hero() {
                             initial={{ y: "100%" }}
                             animate={{ y: 0 }}
                             transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                            className="text-6xl md:text-8xl lg:text-[9rem] leading-[0.85] font-black uppercase tracking-tighter text-neutral-900"
+                            className="text-6xl md:text-7xl lg:text-[7rem] leading-[0.9] font-black uppercase tracking-tighter text-neutral-900"
                         >
                             Simplified.
                         </motion.h1>
@@ -133,48 +131,31 @@ export default function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="flex flex-col md:flex-row items-center gap-10 border-t border-black/5 pt-10"
+                        className="flex flex-col xl:flex-row items-center xl:items-start gap-10 border-t border-black/5 pt-10 w-full"
                     >
                         <Link
                             href="/collections"
-                            className="group relative px-10 py-5 bg-black text-white rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                            className="group relative px-10 py-5 bg-black text-white hover:bg-neutral-800 transition-colors flex items-center justify-center whitespace-nowrap"
                         >
-                            <div className="absolute inset-0 bg-neutral-800 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                             <span className="relative z-10 font-bold uppercase tracking-widest text-sm flex items-center gap-3">
-                                Shop Now <span>→</span>
+                                Explore <span>→</span>
                             </span>
                         </Link>
 
-                        <p className="text-xl text-neutral-500 max-w-md font-medium leading-relaxed">
+                        <p className="text-xl text-neutral-500 max-w-md font-medium leading-relaxed text-center xl:text-left">
                             Redefining modern workspaces with world-class craftsmanship and liquid design.
                         </p>
                     </motion.div>
                 </motion.div>
 
-                {/* 2. Furniture Imagery Grid - Parallax + 3D Tilt */}
-                <div className="flex-1 w-full max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start perspective-1000">
-
-                    {/* Left: Quality Sofas - Stationary with 3D Tilt */}
-                    <TiltCard className="w-full aspect-[4/3] rounded-[3rem] overflow-hidden">
+                {/* 2. Furniture Imagery - Large Right-Side 3D Tilt */}
+                <div className="flex w-full lg:w-1/2 items-center justify-center perspective-1000 mt-10 lg:mt-0">
+                    <TiltCard className="w-full flex justify-center">
                         <img
                             src="/uploads/ref/hero 1.jpg"
                             alt="Modern Office Setup"
-                            className="w-full h-full object-cover scale-110"
+                            className="w-full max-w-3xl h-auto object-contain scale-110 lg:scale-125 lg:translate-x-12"
                         />
-
-                    </TiltCard>
-
-                    {/* Right: Chairs - Moving Up (Parallax) with 3D Tilt */}
-                    <TiltCard
-                        parallaxY={rightImageY}
-                        className="w-full aspect-[4/3] rounded-[3rem] overflow-hidden mt-0 lg:mt-32"
-                    >
-                        <img
-                            src="/uploads/ref/hero 2.avif"
-                            alt="Executive Workspace"
-                            className="w-full h-full object-cover scale-110"
-                        />
-
                     </TiltCard>
                 </div>
 
