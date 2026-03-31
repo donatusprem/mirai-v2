@@ -92,14 +92,16 @@ export default function CartPanel() {
                         {/* Content */}
                         <div className="flex-1 overflow-auto p-6">
                             {submitted ? (
-                                <div className="h-full flex flex-col items-center justify-center text-center">
-                                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                                        <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                <div className="h-full flex flex-col items-center justify-center text-center p-8 border border-neutral-200 bg-neutral-50 h-max my-auto">
+                                    <div className="mb-6 opacity-80">
+                                        <svg className="w-12 h-12 mx-auto text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={1} d="M5 13l4 4L19 7" />
                                         </svg>
                                     </div>
-                                    <h3 className="text-xl font-bold mb-2">Quote Request Sent!</h3>
-                                    <p className="text-black/60">We'll get back to you soon.</p>
+                                    <h3 className="text-2xl font-black uppercase tracking-widest mb-4">Request Received</h3>
+                                    <p className="text-neutral-600 font-medium leading-relaxed">
+                                        Thank you for your interest. A Mirai representative will review your selected items and contact you with a formalized quote shortly.
+                                    </p>
                                 </div>
                             ) : showQuoteForm ? (
                                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -112,7 +114,7 @@ export default function CartPanel() {
                                             required
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                            className="w-full px-4 py-3 border border-black/10 rounded-lg focus:outline-none focus:border-olive"
+                                            className="w-full px-4 py-3 border border-black/10 rounded-none focus:outline-none focus:border-olive"
                                         />
                                     </div>
 
@@ -123,7 +125,7 @@ export default function CartPanel() {
                                             required
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                            className="w-full px-4 py-3 border border-black/10 rounded-lg focus:outline-none focus:border-olive"
+                                            className="w-full px-4 py-3 border border-black/10 rounded-none focus:outline-none focus:border-olive"
                                         />
                                     </div>
 
@@ -133,7 +135,7 @@ export default function CartPanel() {
                                             type="tel"
                                             value={formData.phone}
                                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                            className="w-full px-4 py-3 border border-black/10 rounded-lg focus:outline-none focus:border-olive"
+                                            className="w-full px-4 py-3 border border-black/10 rounded-none focus:outline-none focus:border-olive"
                                         />
                                     </div>
 
@@ -143,7 +145,7 @@ export default function CartPanel() {
                                             type="text"
                                             value={formData.company}
                                             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                                            className="w-full px-4 py-3 border border-black/10 rounded-lg focus:outline-none focus:border-olive"
+                                            className="w-full px-4 py-3 border border-black/10 rounded-none focus:outline-none focus:border-olive"
                                         />
                                     </div>
 
@@ -153,7 +155,7 @@ export default function CartPanel() {
                                             value={formData.message}
                                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                             rows={3}
-                                            className="w-full px-4 py-3 border border-black/10 rounded-lg focus:outline-none focus:border-olive resize-none"
+                                            className="w-full px-4 py-3 border border-black/10 rounded-none focus:outline-none focus:border-olive resize-none"
                                         />
                                     </div>
 
@@ -161,14 +163,14 @@ export default function CartPanel() {
                                         <button
                                             type="button"
                                             onClick={() => setShowQuoteForm(false)}
-                                            className="flex-1 py-3 border border-black/10 rounded-lg hover:bg-neutral-50"
+                                            className="flex-1 py-3 border border-black/10 rounded-none hover:bg-neutral-50 font-bold uppercase tracking-widest text-xs"
                                         >
                                             Back
                                         </button>
                                         <button
                                             type="submit"
                                             disabled={isSubmitting}
-                                            className="flex-1 py-3 bg-neutral-900 text-white rounded-lg hover:bg-black disabled:opacity-50"
+                                            className="flex-1 py-3 bg-neutral-900 text-white rounded-none hover:bg-black disabled:opacity-50 font-bold uppercase tracking-widest text-xs"
                                         >
                                             {isSubmitting ? "Sending..." : "Submit Quote"}
                                         </button>
@@ -182,7 +184,7 @@ export default function CartPanel() {
                                     <Link
                                         href="/collections"
                                         onClick={closeCart}
-                                        className="px-6 py-3 bg-black text-white rounded-lg hover:bg-black/80"
+                                        className="px-6 py-4 bg-black text-white rounded-none hover:bg-black/80 font-bold uppercase tracking-widest text-xs"
                                     >
                                         Browse Collections
                                     </Link>
@@ -190,26 +192,26 @@ export default function CartPanel() {
                             ) : (
                                 <div className="space-y-4">
                                     {items.map((item) => (
-                                        <div key={item.id} className="flex gap-4 p-4 bg-neutral-50 rounded-lg">
+                                        <div key={item.id} className="flex gap-4 p-4 border border-neutral-100 bg-neutral-50 rounded-none">
                                             {item.image && (
-                                                <div className="w-20 h-20 bg-neutral-200 rounded-lg overflow-hidden flex-shrink-0">
+                                                <div className="w-20 h-20 bg-neutral-200 rounded-none overflow-hidden flex-shrink-0">
                                                     <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                                                 </div>
                                             )}
                                             <div className="flex-1 min-w-0">
-                                                <h4 className="font-medium truncate">{item.name}</h4>
-                                                <p className="text-sm text-black/60">{item.category}</p>
-                                                <div className="flex items-center gap-2 mt-2">
+                                                <h4 className="font-bold uppercase tracking-wide text-sm truncate">{item.name}</h4>
+                                                <p className="text-xs text-black/60 uppercase tracking-widest mt-1">{item.category}</p>
+                                                <div className="flex items-center gap-2 mt-3">
                                                     <button
                                                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                                                        className="p-1 hover:bg-neutral-200 rounded"
+                                                        className="p-1 border border-black/10 hover:bg-neutral-200 rounded-none"
                                                     >
                                                         <Minus size={14} />
                                                     </button>
                                                     <span className="text-sm font-medium w-6 text-center">{item.quantity}</span>
                                                     <button
                                                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                                                        className="p-1 hover:bg-neutral-200 rounded"
+                                                        className="p-1 border border-black/10 hover:bg-neutral-200 rounded-none"
                                                     >
                                                         <Plus size={14} />
                                                     </button>
@@ -217,7 +219,7 @@ export default function CartPanel() {
                                             </div>
                                             <button
                                                 onClick={() => removeItem(item.id)}
-                                                className="p-2 hover:bg-red-100 hover:text-red-600 rounded-lg"
+                                                className="p-2 hover:bg-red-100 hover:text-red-600 rounded-none self-start"
                                             >
                                                 <Trash2 size={16} />
                                             </button>
@@ -229,14 +231,14 @@ export default function CartPanel() {
 
                         {/* Footer */}
                         {items.length > 0 && !showQuoteForm && !submitted && (
-                            <div className="p-6 border-t border-black/10 space-y-4">
-                                <div className="flex justify-between text-sm">
+                            <div className="p-6 border-t border-black/10 space-y-4 bg-white/50 backdrop-blur-md">
+                                <div className="flex justify-between text-sm uppercase tracking-widest font-bold">
                                     <span className="text-black/60">Total items</span>
-                                    <span className="font-bold">{totalItems}</span>
+                                    <span>{totalItems}</span>
                                 </div>
                                 <button
                                     onClick={() => setShowQuoteForm(true)}
-                                    className="w-full py-4 bg-black/80 backdrop-blur-md border border-white/20 text-white font-bold uppercase tracking-wide rounded-2xl shadow-lg hover:bg-black hover:scale-[1.02] transition-all duration-300"
+                                    className="w-full py-5 bg-black text-white font-bold uppercase tracking-widest text-sm hover:bg-neutral-800 transition-all rounded-none block border border-black hover:-translate-y-1 hover:shadow-[0_10px_0_0_rgba(0,0,0,1)]"
                                 >
                                     Proceed to Submit
                                 </button>
