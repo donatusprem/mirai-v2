@@ -112,7 +112,7 @@ export default function Hero() {
                             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                             className="text-6xl md:text-7xl lg:text-[7rem] leading-[0.9] font-black uppercase tracking-tighter text-neutral-900"
                         >
-                            The Art Of <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 to-neutral-400">Work</span>
+                            Office <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-800 to-neutral-400">Furniture</span>
                         </motion.h1>
                     </div>
 
@@ -123,7 +123,7 @@ export default function Hero() {
                             transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                             className="text-6xl md:text-7xl lg:text-[7rem] leading-[0.9] font-black uppercase tracking-tighter text-neutral-900"
                         >
-                            Elevated.
+                            Simplified.
                         </motion.h1>
                     </div>
 
