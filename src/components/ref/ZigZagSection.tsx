@@ -7,8 +7,8 @@ export default function ZigZagSection() {
         <section className="py-24 bg-white relative overflow-hidden">
             <div className="container mx-auto px-6 md:px-12">
                 <div className="text-center mb-16 md:mb-24">
-                    <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-neutral-400 mb-4">Why Us</h2>
-                    <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-10">The Mirai Difference</h3>
+                    <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-neutral-400 mb-4">Our Philosophy</h2>
+                    <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight mb-10">The Mirai Ethos</h3>
                 </div>
             </div>
 
@@ -16,24 +16,24 @@ export default function ZigZagSection() {
 
                 {/* Feature 1: Quality (Image Left, Text Right) */}
                 <FeatureCard
-                    title="Quality Products"
-                    description="Uncompromising quality. Every product is crafted using premium materials, advanced manufacturing processes, and rigorous quality controls to meet global standards."
+                    title="Material Integrity"
+                    description="We strip away the unnecessary until nothing but the essential remains. By sourcing uncompromised materials and obsessing over the structural integrity of every weld and joint, we ensure each piece outlasts the trends."
                     image="/uploads/ref/quality.avif"
                     reversed={false}
                 />
 
                 {/* Feature 2: Unique Designs (Image Right, Text Left) */}
                 <FeatureCard
-                    title="Unique Designs"
-                    description="Exclusive designs created by world-famous designers. Our design philosophy blends innovation, elegance, and functionality."
+                    title="Intentional Silhouettes"
+                    description="We reject the visual noise of traditional office furniture. Our aesthetics lean into stark minimalism and architectural precision, creating objects that demand attention without ever asking for it."
                     image="/uploads/ref/unique designs.avif"
                     reversed={true}
                 />
 
                 {/* Feature 3: Exclusive Pieces (Image Left, Text Right) */}
                 <FeatureCard
-                    title="Exclusive Pieces"
-                    description="Limited design availability, refined detailing, and a strong design identity make Mirai furniture truly one of a kind."
+                    title="Curated Rarity"
+                    description="Mass production dilutes soul. We operate on a philosophy of controlled curation—producing limited runs with exacting standards, ensuring the pieces that shape your space remain distinctively yours."
                     image="/uploads/ref/exclusive pieces.avif"
                     reversed={false}
                 />

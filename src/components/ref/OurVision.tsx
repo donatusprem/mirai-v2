@@ -37,8 +37,8 @@ export default function OurVision() {
                     <h2 className="text-sm font-bold uppercase tracking-[0.3em] mb-12 text-neutral-400">Our Vision</h2>
 
                     <p className="text-3xl md:text-5xl font-light leading-tight text-neutral-800 tracking-tight">
-                        "We believe that the workspace is not just a physical location, but a <strong className="font-semibold text-black">state of mind</strong>.
-                        Our mission is to create environments that foster creativity and well-being through <strong className="font-semibold text-black">impeccable craftsmanship</strong>."
+                        "Design is the silent partner in every great endeavor. At Mirai, we don't just build furniture; we <strong className="font-semibold text-black">curate your environment</strong>. 
+                        Our philosophy dictates that clean lines and intentional minimalism create the <strong className="font-semibold text-black">mental space</strong> necessary for your best work."
                     </p>
 
                 </motion.div>

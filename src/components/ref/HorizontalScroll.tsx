@@ -29,7 +29,7 @@ export default function HorizontalScroll() {
                 <div className="container mx-auto px-6 md:px-12 mb-12 flex items-end justify-between">
                     <div>
                         <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight mb-4">Collections</h2>
-                        <p className="text-neutral-500 max-w-sm">Explore our wide range of premium office solutions.</p>
+                        <p className="text-neutral-500 max-w-sm">Explore our ongoing study in material, form, and ergonomics.</p>
                     </div>
                 </div>
 
