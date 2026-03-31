@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import MouseFollower from "@/components/ui/MouseFollower";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { CartProvider } from "@/context/CartContext";
@@ -38,7 +37,6 @@ export default function RootLayout({
         <CartProvider>
           <ToastProvider>
             <SmoothScroll />
-            <MouseFollower />
             <Header />
             {children}
             <Footer />

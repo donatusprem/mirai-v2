@@ -85,7 +85,7 @@ export default function Contact() {
                         </div>
                     </div>
 
-                    <div className="lg:col-span-7 bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm">
+                    <div className="lg:col-span-7 bg-white/80 backdrop-blur-sm p-8 rounded-none shadow-sm">
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">

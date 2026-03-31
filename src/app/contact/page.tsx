@@ -104,7 +104,7 @@ export default function ContactPage() {
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="bg-white/50 backdrop-blur-sm p-10 md:p-16 rounded-[3rem] shadow-sm border border-white/50 relative overflow-hidden"
+                        className="bg-white/50 backdrop-blur-sm p-10 md:p-16 rounded-none shadow-sm border border-white/50 relative overflow-hidden"
                     >
                         {/* Subtle form tint */}
                         <div className="absolute inset-0 bg-white/20 z-0" />
@@ -162,7 +162,7 @@ export default function ContactPage() {
                             <button
                                 type="submit"
                                 disabled={status === "loading" || status === "success"}
-                                className="group w-full bg-black text-white py-6 rounded-full font-bold uppercase tracking-widest hover:bg-neutral-800 transition-all flex items-center justify-center gap-4 overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed"
+                                className="group w-full bg-black text-white py-6 rounded-none font-bold uppercase tracking-widest hover:bg-neutral-800 transition-all flex items-center justify-center gap-4 overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed"
                             >
                                 <span className="relative z-10">
                                     {status === "loading" ? "Sending..." :
